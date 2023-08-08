@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.template.android
+package co.nimblehq.kaylabruce.kmmic.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,7 +8,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import co.nimblehq.kmm.template.Greeting
+import co.nimblehq.kaylabruce.kmmic.Greeting
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

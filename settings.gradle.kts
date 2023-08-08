@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "KMM_Template"
+rootProject.name = "BruceKaylaSurvey"
 include(":android")
 include(":shared")
