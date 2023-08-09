@@ -1,3 +1,5 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+
 plugins {
     kotlin(Plugin.MULTIPLATFORM)
     kotlin(Plugin.COCOAPODS)
@@ -21,7 +23,7 @@ kotlin {
     iosSimulatorArm64()
 
     cocoapods {
-        name = "Shared"
+        name = "shared"
         summary = "Shared Cocoa Pods"
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
@@ -51,5 +53,14 @@ android {
     compileSdk = Version.ANDROID_COMPILE_SDK
     defaultConfig {
         minSdk = Version.ANDROID_DEFAULT_MIN_SDK
+    }
+}
+
+buildkonfig {
+    packageName = "co.nimblehq.kaylabruce.kmmic"
+
+    // Default for Flavors.STAGING
+    defaultConfigs {
+
     }
 }
