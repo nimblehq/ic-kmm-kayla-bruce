@@ -5,10 +5,11 @@
 //  Created by Thiên Nguyễn on 8/10/23.
 //  Copyright © 2023 orgName. All rights reserved.
 //
+
 import SwiftUI
 
-private let showLogoDelay = 0.5
-private let showLogoDuration = 1.0
+let SHOW_LOGO_DELAY = 0.5
+let SHOW_LOGO_DURATION = 1.0
 
 
 struct SplashView: View {
@@ -17,26 +18,27 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            Image("BackgroundSplash")
-                .resizable()
+            Image("BackgroundSplash").resizable()
                 .aspectRatio(contentMode: .fill)
 
             Image("LogoWhite")
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity)
-                .opacity(isLoaded ? 1.0 : 0.0)
+                .opacity(
+                    isLoaded ? 1.0 : 0.0
+                )
         }
         .ignoresSafeArea()
-        .animation(
-            .easeIn(duration: showLogoDuration).delay(showLogoDelay),
-            value: isLoaded
-        )
+        .animation(.easeIn(duration: SHOW_LOGO_DURATION).delay(SHOW_LOGO_DELAY), value: isLoaded)
         .onAppear {
             isLoaded.toggle()
         }
     }
 }
 
-#Preview {
-    SplashView()
+struct SplashView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        SplashView()
+    }
 }
