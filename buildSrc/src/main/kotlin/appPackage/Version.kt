@@ -1,5 +1,5 @@
 object Version {
-    const val ANDROID_TARGET_SDK = 24
+    const val ANDROID_TARGET_SDK = 33
     const val ANDROID_MIN_SDK = 33
     const val ANDROID_COMPILE_SDK = 33
     const val ANDROID_DEFAULT_MIN_SDK = 33
