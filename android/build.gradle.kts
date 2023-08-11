@@ -46,4 +46,5 @@ dependencies {
     implementation(Dependency.Compose.UI_TOOLING_PREVIEW)
     implementation(Dependency.Compose.MATERIAL)
     implementation(Dependency.Compose.NAVIGATION)
+    implementation(Dependency.Compose.COIL)
 }
