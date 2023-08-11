@@ -13,7 +13,6 @@
 		227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227239202A84E8A60040B3CF /* R+FontResource.swift */; };
 		2291AECC2A84991500F262EA /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */; };
 		2291AECD2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECB2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf */; };
-		2291AED02A84995300F262EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECF2A84995300F262EA /* LaunchScreen.storyboard */; };
 		2291AEDD2A849AF400F262EA /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291AEDC2A849AF400F262EA /* SplashView.swift */; };
 		2291AEE02A849B1100F262EA /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291AEDF2A849B1100F262EA /* HomeContainerView.swift */; };
 		2291AEE32A849C6200F262EA /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291AEE22A849C6200F262EA /* HomeHeaderView.swift */; };
@@ -24,7 +23,6 @@
 		22A41E992A85F2D200C3265C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A41E982A85F2D200C3265C /* Font.swift */; };
 		22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4B5C92A861D0F00041D92 /* Dimens.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		966CF3C02A84F1D000C2592B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CF3BF2A84F1D000C2592B /* SplashView.swift */; };
 		BBA1F9E8E9972A7A483AB606 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AF58C075473DD0EA8E52E /* Pods_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +34,6 @@
 		227239282A85E2BA0040B3CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
 		2291AECB2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-BookHeavy.otf"; sourceTree = "<group>"; };
-		2291AECF2A84995300F262EA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2291AED22A8499D600F262EA /* confetti.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		2291AEDC2A849AF400F262EA /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		2291AEDF2A849B1100F262EA /* HomeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
@@ -50,7 +47,6 @@
 		5DEA60E82D61537B399BD751 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		966CF3BF2A84F1D000C2592B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B28F39CF3BC61002CB794577 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +116,6 @@
 			children = (
 				2291AEC92A8498E600F262EA /* Assets */,
 				2291AEC82A8498D900F262EA /* Fonts */,
-				2291AECE2A84992F00F262EA /* LaunchScreen */,
 				2291AED12A8499A800F262EA /* Lotties */,
 			);
 			path = Resources;
@@ -154,14 +149,6 @@
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		2291AECE2A84992F00F262EA /* LaunchScreen */ = {
-			isa = PBXGroup;
-			children = (
-				2291AECF2A84995300F262EA /* LaunchScreen.storyboard */,
-			);
-			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		2291AED12A8499A800F262EA /* Lotties */ = {
@@ -398,7 +385,6 @@
 				2291AECC2A84991500F262EA /* NeuzeitSLTStd-Book.otf in Resources */,
 				2291AECD2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
-				2291AED02A84995300F262EA /* LaunchScreen.storyboard in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
