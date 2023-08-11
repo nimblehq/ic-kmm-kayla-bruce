@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import co.nimblehq.kmm.template.android.R
+import co.nimblehq.kaylabruce.kmmic.android.R
 import kotlinx.coroutines.delay
 
 private const val SHOW_LOGO_DELAY = 1000L
