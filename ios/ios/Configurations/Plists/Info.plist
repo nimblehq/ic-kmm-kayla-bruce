@@ -7,8 +7,6 @@
 		<string>NeuzeitSLTStd-Book.otf</string>
 		<string>NeuzeitSLTStd-BookHeavy.otf</string>
 	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

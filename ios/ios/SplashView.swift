@@ -5,6 +5,7 @@
 //  Created by Thiên Nguyễn on 8/10/23.
 //  Copyright © 2023 orgName. All rights reserved.
 //
+
 import SwiftUI
 
 private let showLogoDelay = 0.5
