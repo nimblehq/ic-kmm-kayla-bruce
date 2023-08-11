@@ -1,15 +1,15 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id(Plugin.ANDROID_APPLICATION)
+    kotlin(Plugin.ANDROID)
 }
 
 android {
-    namespace = "co.nimblehq.kmm.template.android"
-    compileSdk = 33
+    namespace = "co.nimblehq.kaylabruce.kmmic.android"
+    compileSdk = Version.ANDROID_COMPILE_SDK
     defaultConfig {
-        applicationId = "co.nimblehq.kmm.template.android"
-        minSdk = 24
-        targetSdk = 33
+        applicationId = "co.nimblehq.kaylabruce.kmmic.android"
+        minSdk = Version.ANDROID_MIN_SDK
+        targetSdk = Version.ANDROID_TARGET_SDK
         versionCode = 1
         versionName = "1.0"
     }
@@ -39,11 +39,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":shared"))
-    implementation("androidx.compose.ui:ui:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling:1.4.3")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
-    implementation("androidx.compose.foundation:foundation:1.4.3")
-    implementation("androidx.compose.material:material:1.4.3")
-    implementation("androidx.activity:activity-compose:1.7.1")
+    implementation(project(Configuration.Module.SHARED))
+    implementation(Dependency.Compose.UI)
+    implementation(Dependency.Compose.UI_GRAPHICS)
+    implementation(Dependency.Compose.UI_TOOLING)
+    implementation(Dependency.Compose.UI_TOOLING_PREVIEW)
+    implementation(Dependency.Compose.MATERIAL)
+    implementation(Dependency.Compose.NAVIGATION)
 }

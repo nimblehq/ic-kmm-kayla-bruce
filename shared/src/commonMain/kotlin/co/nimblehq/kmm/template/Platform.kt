@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.template
+package co.nimblehq.kaylabruce.kmmic
 
 interface Platform {
     val name: String

@@ -1,4 +1,4 @@
-https://github.com/nimblehq/kmm-templates/milestone/?
+https://github.com/nimblehq/ic-kmm-kayla-bruce/milestone/?
 
 ## Features
 
