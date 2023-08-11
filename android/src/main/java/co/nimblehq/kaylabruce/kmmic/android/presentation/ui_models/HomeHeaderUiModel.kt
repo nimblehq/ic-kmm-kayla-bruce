@@ -4,4 +4,4 @@ data class HomeHeaderUiModel(
     val imageUrl: String,
     val dateText: String,
     val todayText: String,
-) {}
+)
