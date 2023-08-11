@@ -1,5 +1,15 @@
 target 'ios' do
   use_frameworks!
   platform :ios, '14.1'
+
+  # KMM
   pod 'shared', :path => '../shared'
+
+  # UI
+  pod 'Kingfisher'
+  pod 'SnapKit'
+  pod 'SkeletonUI'
+  pod 'lottie-ios'
+
+  # Support
 end

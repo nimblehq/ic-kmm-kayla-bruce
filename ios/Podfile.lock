@@ -1,16 +1,35 @@
 PODS:
+  - Kingfisher (7.8.1)
+  - lottie-ios (4.2.0)
   - shared (1.0)
+  - SkeletonUI (1.0.11)
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - Kingfisher
+  - lottie-ios
   - shared (from `../shared`)
+  - SkeletonUI
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - lottie-ios
+    - SkeletonUI
+    - SnapKit
 
 EXTERNAL SOURCES:
   shared:
     :path: "../shared"
 
 SPEC CHECKSUMS:
+  Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
+  lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
   shared: 214ae1c74348d101f96a3dbc63f2c4eb15fbe11b
+  SkeletonUI: a5514a3877d39f28229c852a567660d0f7542330
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 989c3371785a0e76194f7205a92e2975dbe2d5a4
+PODFILE CHECKSUM: 229d03493f0987e46134d835ccbf0f79984d89b3
 
 COCOAPODS: 1.12.1
