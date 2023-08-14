@@ -45,3 +45,6 @@ captures
 .cxx
 local.properties
 xcuserdata
+
+# iOS
+*.generated.swift

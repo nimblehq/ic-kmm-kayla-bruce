@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.template
+package co.nimblehq.kaylabruce.kmmic
 
 class Greeting {
     private val platform: Platform = getPlatform()

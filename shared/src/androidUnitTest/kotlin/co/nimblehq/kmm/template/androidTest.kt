@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.template
+package co.nimblehq.kaylabruce.kmmic
 
 import org.junit.Assert.assertTrue
 import org.junit.Test

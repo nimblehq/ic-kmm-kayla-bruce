@@ -1,0 +1,67 @@
+# frozen_string_literal: true
+
+require './Constants/Constants'
+require './Constants/Environments'
+require './Managers/MatchManager'
+
+match_manager = MatchManager.new(
+  fastlane: self,
+  keychain_name: Constants.KEYCHAIN_NAME,
+  keychain_password: Constants.KEYCHAIN_PASSWORD,
+  is_ci: Environments.CI
+)
+
+before_all do
+  ensure_bundle_exec
+end
+
+default_platform(:ios)
+
+platform :ios do
+
+  # Code Sign
+
+  desc 'Sync Development match signing'
+  lane :sync_development_signing do
+      match_manager.sync_development_signing(
+        app_identifier: [
+          Constants.BUNDLE_ID_STAGING,
+          Constants.BUNDLE_ID_PRODUCTION
+        ]
+      )
+  end
+
+  desc 'Sync Adhoc match signing'
+  lane :sync_adhoc_signing do
+    match_manager.sync_adhoc_signing(app_identifier: [Constants.BUNDLE_ID_STAGING])
+  end
+
+  desc 'Sync Adhoc Production match signing'
+  lane :sync_adhoc_production_signing do
+    match_manager.sync_adhoc_signing(app_identifier: [Constants.BUNDLE_ID_PRODUCTION])
+  end
+
+  desc 'Sync AppStore match signing'
+  lane :sync_appstore_signing do
+    match_manager.sync_app_store_signing(app_identifier: [Constants.BUNDLE_ID_PRODUCTION])
+  end
+
+  desc 'Register new devices'
+  lane :register_new_device do
+    device_name = prompt(text: 'Enter the device name: ')
+    device_udid = prompt(text: 'Enter the device UDID: ')
+    device_hash = {}
+    device_hash[device_name] = device_udid
+    register_devices(devices: device_hash)
+
+    match_manager.sync_development_signing(app_identifier: nil, force: true)
+    match_manager.sync_adhoc_signing(app_identifier: nil, force: true)
+  end
+
+  # Utilities
+
+  desc 'Clean up derived data'
+  lane :clean_up do
+    clear_derived_data(derived_data_path: Constants.DERIVED_DATA_PATH)
+  end
+end
