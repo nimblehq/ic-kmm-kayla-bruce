@@ -12,4 +12,7 @@ target 'ios' do
   pod 'lottie-ios'
 
   # Support
+  pod 'SwiftLint'
+  pod 'R.swift'
+
 end

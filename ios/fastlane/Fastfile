@@ -3,6 +3,13 @@
 require './Constants/Constants'
 require './Constants/Environments'
 require './Managers/MatchManager'
+require './Managers/TestManager'
+
+test_manager = TestManager.new(
+  fastlane: self,
+  device: Constants.DEVICE,
+  output_directory: Constants.TEST_OUTPUT_DIRECTORY_PATH
+)
 
 match_manager = MatchManager.new(
   fastlane: self,
@@ -18,6 +25,14 @@ end
 default_platform(:ios)
 
 platform :ios do
+
+  desc 'Build and Test'
+  lane :build_and_test do
+    test_manager.build_and_test(
+      scheme: Constants.TESTS_SCHEME,
+      targets: [Constants.TESTS_TARGET]
+    )
+  end
 
   # Code Sign
 
