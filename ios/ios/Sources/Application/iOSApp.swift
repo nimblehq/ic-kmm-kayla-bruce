@@ -5,6 +5,7 @@ struct iOSApp: App {
 	var body: some Scene {
 		WindowGroup {
 			SplashView()
+                .preferredColorScheme(.dark)
 		}
 	}
 }

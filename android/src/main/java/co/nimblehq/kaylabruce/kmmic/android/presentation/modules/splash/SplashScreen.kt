@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.template.android.screen.splash
+package co.nimblehq.kaylabruce.kmmic.android.presentation.modules.splash
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween
