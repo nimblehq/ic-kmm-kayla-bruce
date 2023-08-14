@@ -1,4 +1,5 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     kotlin(Plugin.MULTIPLATFORM)
@@ -32,6 +33,10 @@ kotlin {
         framework {
             baseName = "shared"
         }
+        xcodeConfigurationToNativeBuildType["DebugStaging"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["DebugProduction"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["ReleaseStaging"] = NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["ReleaseProduction"] = NativeBuildType.RELEASE
     }
     
     sourceSets {
@@ -64,17 +69,17 @@ buildkonfig {
         buildConfigField(
             STRING,
             "CLIENT_ID",
-            `BuildKonfig.example`.CLIENT_ID_STAGING
+            BuildKonfig.CLIENT_ID_STAGING
         )
         buildConfigField(
             STRING,
             "CLIENT_SECRET",
-            `BuildKonfig.example`.CLIENT_SECRET_STAGING
+            BuildKonfig.CLIENT_SECRET_STAGING
         )
         buildConfigField(
             STRING,
             "BASE_URL",
-            `BuildKonfig.example`.BASE_URL_STAGING
+            BuildKonfig.BASE_URL_STAGING
         )
     }
 
@@ -82,17 +87,17 @@ buildkonfig {
         buildConfigField(
             STRING,
             "CLIENT_ID",
-            `BuildKonfig.example`.CLIENT_ID_PRODUCTION
+            BuildKonfig.CLIENT_ID_PRODUCTION
         )
         buildConfigField(
             STRING,
             "CLIENT_SECRET",
-            `BuildKonfig.example`.CLIENT_SECRET_PRODUCTION
+            BuildKonfig.CLIENT_SECRET_PRODUCTION
         )
         buildConfigField(
             STRING,
             "BASE_URL",
-            `BuildKonfig.example`.BASE_URL_PRODUCTION
+            BuildKonfig.BASE_URL_PRODUCTION
         )
     }
 
@@ -100,17 +105,17 @@ buildkonfig {
         buildConfigField(
             STRING,
             "CLIENT_ID",
-            `BuildKonfig.example`.CLIENT_ID_STAGING
+            BuildKonfig.CLIENT_ID_STAGING
         )
         buildConfigField(
             STRING,
             "CLIENT_SECRET",
-            `BuildKonfig.example`.CLIENT_SECRET_STAGING
+            BuildKonfig.CLIENT_SECRET_STAGING
         )
         buildConfigField(
             STRING,
             "BASE_URL",
-            `BuildKonfig.example`.BASE_URL_STAGING
+            BuildKonfig.BASE_URL_STAGING
         )
     }
 }
