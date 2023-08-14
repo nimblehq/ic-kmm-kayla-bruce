@@ -59,8 +59,58 @@ android {
 buildkonfig {
     packageName = "co.nimblehq.kaylabruce.kmmic"
 
-    // Default for Flavors.STAGING
+    // Default for Flavor.STAGING
     defaultConfigs {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            `BuildKonfig.example`.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            `BuildKonfig.example`.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            `BuildKonfig.example`.BASE_URL_STAGING
+        )
+    }
 
+    defaultConfigs(Configuration.Flavor.PRODUCTION) {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            `BuildKonfig.example`.CLIENT_ID_PRODUCTION
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            `BuildKonfig.example`.CLIENT_SECRET_PRODUCTION
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            `BuildKonfig.example`.BASE_URL_PRODUCTION
+        )
+    }
+
+    defaultConfigs(Configuration.Flavor.STAGING) {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            `BuildKonfig.example`.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            `BuildKonfig.example`.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            `BuildKonfig.example`.BASE_URL_STAGING
+        )
     }
 }
