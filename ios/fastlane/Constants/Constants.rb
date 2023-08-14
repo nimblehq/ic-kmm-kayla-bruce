@@ -36,7 +36,7 @@ class Constants
   
     # a build path
     def self.BUILD_PATH
-      './Build'
+      './ios'
     end
   
     #################

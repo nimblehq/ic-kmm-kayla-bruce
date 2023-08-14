@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>862265527597-dljn13iaks2sfhjdcvnp0oldqsm7alkn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.862265527597-dljn13iaks2sfhjdcvnp0oldqsm7alkn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCB2MLngyAT4vO5WTqU11RiZLaUP23Y4fc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>862265527597</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>co.nimblehq.kaylabruce.kmmic</string>
+	<key>PROJECT_ID</key>
+	<string>kaylabruce-kmmic</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kaylabruce-kmmic.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:862265527597:ios:d430d009bbab3fb77a57a4</string>
+</dict>
+</plist>
