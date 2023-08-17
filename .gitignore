@@ -45,6 +45,8 @@ captures
 .cxx
 local.properties
 xcuserdata
+buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt
 
 # iOS
 *.generated.swift
+.secrets

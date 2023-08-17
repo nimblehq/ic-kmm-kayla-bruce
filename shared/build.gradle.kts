@@ -1,4 +1,5 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     kotlin(Plugin.MULTIPLATFORM)
@@ -32,6 +33,10 @@ kotlin {
         framework {
             baseName = "shared"
         }
+        xcodeConfigurationToNativeBuildType["DebugStaging"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["DebugProduction"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["ReleaseStaging"] = NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["ReleaseProduction"] = NativeBuildType.RELEASE
     }
     
     sourceSets {
@@ -59,8 +64,58 @@ android {
 buildkonfig {
     packageName = "co.nimblehq.kaylabruce.kmmic"
 
-    // Default for Flavors.STAGING
+    // Default for Flavor.STAGING
     defaultConfigs {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.BASE_URL_STAGING
+        )
+    }
 
+    defaultConfigs(Configuration.Flavor.PRODUCTION) {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_PRODUCTION
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_PRODUCTION
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.BASE_URL_PRODUCTION
+        )
+    }
+
+    defaultConfigs(Configuration.Flavor.STAGING) {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.BASE_URL_STAGING
+        )
     }
 }
