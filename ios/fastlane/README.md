@@ -63,38 +63,6 @@ Sync AppStore match signing
 
 Register new devices
 
-### ios build_and_upload_staging_app
-
-```sh
-[bundle exec] fastlane ios build_and_upload_staging_app
-```
-
-Build and upload staging app to Firebase
-
-### ios build_and_upload_production_app
-
-```sh
-[bundle exec] fastlane ios build_and_upload_production_app
-```
-
-Build and upload Production app to Firebase
-
-### ios build_and_upload_appstore_app
-
-```sh
-[bundle exec] fastlane ios build_and_upload_appstore_app
-```
-
-Build and upload Production app to App Store
-
-### ios set_connect_api_key
-
-```sh
-[bundle exec] fastlane ios set_connect_api_key
-```
-
-set App Store Connect API Key
-
 ### ios clean_up
 
 ```sh
@@ -102,14 +70,6 @@ set App Store Connect API Key
 ```
 
 Clean up derived data
-
-### ios clean_up_xcov
-
-```sh
-[bundle exec] fastlane ios clean_up_xcov
-```
-
-Clean up xcov output
 
 ----
 

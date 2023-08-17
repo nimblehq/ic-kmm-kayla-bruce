@@ -8,7 +8,7 @@
 
 import RswiftResources
 
-struct RFontResource {
+enum RFontResource {
 
     static var neuzeitSLTStdBook: FontResource { R.font.neuzeitSLTStdBook }
     static var neuzeitSLTStdBookHeavy: FontResource { R.font.neuzeitSLTStdBookHeavy }

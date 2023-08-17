@@ -14,4 +14,3 @@ extension String {
         URL(string: self) ?? URL(fileURLWithPath: "")
     }
 }
-

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Dimens {
+enum Dimens {
 
     /// 4.0
     static let tiny: CGFloat = 4.0
@@ -20,7 +20,7 @@ struct Dimens {
     static let large: CGFloat = 20.0
 }
 
-struct PreviewDimens {
+enum PreviewDimens {
 
     /// 300.0
     static let mediumWidth: CGFloat = 300

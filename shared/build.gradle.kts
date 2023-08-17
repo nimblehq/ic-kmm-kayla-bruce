@@ -32,6 +32,7 @@ kotlin {
         podfile = project.file("../ios/Podfile")
         framework {
             baseName = "shared"
+            linkerOpts += "-ld64"
         }
         xcodeConfigurationToNativeBuildType["DebugStaging"] = NativeBuildType.DEBUG
         xcodeConfigurationToNativeBuildType["DebugProduction"] = NativeBuildType.DEBUG

@@ -7,12 +7,12 @@ class Constants
   
     # Workspace path
     def self.WORKSPACE_PATH
-      './Surveys.xcworkspace'
+      './ios.xcworkspace'
     end
   
     # Project path
     def self.PROJECT_PATH
-      './Surveys.xcodeproj'
+      './ios.xcodeproj'
     end
   
     # bundle ID for Staging app
@@ -45,22 +45,22 @@ class Constants
   
     # a device name
     def self.DEVICE
-      ENV.fetch('DEVICE', 'iPhone 12 Pro Max')
+      ENV.fetch('DEVICE', 'iPhone 14')
     end
   
     # a scheme name for testing
     def self.TESTS_SCHEME
-      'Surveys Staging'
+      'ios-staging'
     end
   
     # a target name for tests
     def self.TESTS_TARGET
-      'SurveysTests'
+      'iosTests'
     end
   
     # a target name for UI tests
     def self.UI_TESTS_TARGET
-      'SurveysUITests'
+      'iosUITests' # TODO: Create UITests target
     end
   
     # xcov output directory path
@@ -98,22 +98,17 @@ class Constants
   
     # an staging environment scheme name
     def self.SCHEME_NAME_STAGING
-      'Surveys Staging'
+      'ios-staging'
     end
   
     # a Production environment scheme name
     def self.SCHEME_NAME_PRODUCTION
-      'Surveys'
+      'ios-production'
     end
   
     # an staging product name
     def self.PRODUCT_NAME_STAGING
       'Surveys Staging'
-    end
-  
-    # a staging TestFlight product name
-    def self.PRODUCT_NAME_STAGING_TEST_FLIGHT
-      'Surveys TestFlight'
     end
   
     # a Production product name
@@ -123,7 +118,6 @@ class Constants
   
     # a main target name
     def self.MAIN_TARGET_NAME
-      'Surveys'
+      'ios'
     end
-  
   end
