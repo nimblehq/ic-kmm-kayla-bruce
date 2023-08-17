@@ -1,17 +1,16 @@
-package co.nimblehq.kmm.template.android.navigation
+package co.nimblehq.kaylabruce.kmmic.android.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.*
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import co.nimblehq.kmm.template.android.screen.signin.SignInScreen
-import co.nimblehq.kmm.template.android.screen.splash.SplashScreen
+import androidx.navigation.compose.*
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.signin.SignInScreen
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.splash.SplashScreen
 
 @Composable
-fun AppNavHost(
+fun SurveyNavHost(
     modifier: Modifier = Modifier,
-    navController: NavHostController,
+    navController: NavHostController = rememberNavController(),
 ) {
     NavHost(
         navController = navController,
@@ -19,7 +18,13 @@ fun AppNavHost(
         modifier = modifier
     ) {
         composable(SurveyDestination.Splash) {
-            SplashScreen()
+            SplashScreen(
+                onNavigator = {
+                    navController.navigate(
+                        route = SurveyDestination.SignIn.route,
+                    )
+                }
+            )
         }
 
         composable(SurveyDestination.SignIn) {

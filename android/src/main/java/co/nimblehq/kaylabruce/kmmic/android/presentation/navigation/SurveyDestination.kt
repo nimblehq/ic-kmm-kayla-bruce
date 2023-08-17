@@ -1,4 +1,4 @@
-package co.nimblehq.kmm.template.android.navigation
+package co.nimblehq.kaylabruce.kmmic.android.presentation.navigation
 
 import androidx.navigation.NamedNavArgument
 

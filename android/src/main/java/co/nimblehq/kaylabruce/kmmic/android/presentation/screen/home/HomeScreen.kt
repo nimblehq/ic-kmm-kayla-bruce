@@ -1,4 +1,4 @@
-package co.nimblehq.kaylabruce.kmmic.android.presentation.modules.home
+package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Scaffold
@@ -8,8 +8,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.nimblehq.kaylabruce.kmmic.android.constants.Dimens
-import co.nimblehq.kaylabruce.kmmic.android.presentation.modules.home.header.HomeHeaderView
-import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.HomeHeaderUiModel
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.home_header.HomeHeaderView
+import co.nimblehq.kaylabruce.kmmic.android.presentation.ui_models.HomeHeaderUiModel
 
 @Composable
 fun HomeScreen() {
