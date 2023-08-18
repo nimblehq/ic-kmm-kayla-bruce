@@ -36,7 +36,7 @@ fun SignInScreen() {
     val animateLogoOffset by animateOffsetAsState(
         targetValue = logoOffset,
         animationSpec = tween(durationMillis = SHOW_LOGIN_DURATION),
-        label = ""
+        label = "",
     )
 
     LaunchedEffect(Unit) {
@@ -50,7 +50,7 @@ fun SignInScreen() {
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
     ) {
         Image(
             painter = painterResource(id = R.drawable.im_background_blur),
@@ -64,14 +64,14 @@ fun SignInScreen() {
                 painter = painterResource(id = R.drawable.ic_logo_white),
                 contentDescription = null,
                 modifier = Modifier
-                    .offset(animateLogoOffset.x.dp, animateLogoOffset.y.dp)
+                    .offset(animateLogoOffset.x.dp, animateLogoOffset.y.dp),
             )
         }
     }
 
     AnimatedVisibility(
         visible = shouldShowLoginForm,
-        enter = fadeIn(animationSpec = tween(SHOW_LOGIN_DURATION))
+        enter = fadeIn(animationSpec = tween(SHOW_LOGIN_DURATION)),
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(20.dp),
@@ -82,14 +82,14 @@ fun SignInScreen() {
         ) {
             SurveyTextField(
                 text = email,
-                onTextChanged = { email = it },
+                onTextChange = { email = it },
                 placeholder = "Email",
                 keyboardType = KeyboardType.Email,
                 imeAction = ImeAction.Next,
             )
             SurveyTextField(
                 text = password,
-                onTextChanged = { password = it },
+                onTextChange = { password = it },
                 placeholder = "Password",
                 visualTransformation = PasswordVisualTransformation(),
                 imeAction = ImeAction.Done,
@@ -106,7 +106,7 @@ fun SignInScreen() {
                 modifier = Modifier
                     .fillMaxWidth(),
                 text = "Login",
-                onClicked = {},
+                onClick = {},
             )
         }
     }

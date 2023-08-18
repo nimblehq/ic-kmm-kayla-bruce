@@ -14,11 +14,11 @@ import androidx.compose.ui.unit.dp
 fun SurveyButton(
     modifier: Modifier = Modifier,
     text: String,
-    onClicked: () -> Unit,
+    onClick: () -> Unit,
 ) {
     Button(
         shape = RoundedCornerShape(8.dp),
-        onClick = onClicked,
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = Color.White
         ),
@@ -37,6 +37,6 @@ fun SurveyButton(
 fun SurveyButtonPreview() {
     SurveyButton(
         text = "Button",
-        onClicked = {}
+        onClick = {}
     )
 }

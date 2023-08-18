@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 fun SurveyTextField(
     modifier: Modifier = Modifier,
     text: String,
-    onTextChanged: (String) -> Unit,
+    onTextChange: (String) -> Unit,
     placeholder: String,
     keyboardType: KeyboardType = KeyboardType.Text,
     visualTransformation: VisualTransformation = VisualTransformation.None,
@@ -33,7 +33,7 @@ fun SurveyTextField(
     val focusManager = LocalFocusManager.current
     TextField(
         value = text,
-        onValueChange = onTextChanged,
+        onValueChange = onTextChange,
         placeholder = {
             Text(
                 text = placeholder,
@@ -71,7 +71,7 @@ fun SurveyTextField(
 fun SurveyTextFieldPreview() {
     SurveyTextField(
         text = "",
-        onTextChanged = {},
+        onTextChange = {},
         placeholder = "Email",
     )
 }
