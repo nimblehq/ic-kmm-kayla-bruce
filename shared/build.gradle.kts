@@ -6,6 +6,7 @@ plugins {
     kotlin(Plugin.COCOAPODS)
     id(Plugin.ANDROID_LIBRARY)
     id(Plugin.BUILD_KONFIG)
+    id(Plugin.KOVER)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -59,6 +60,16 @@ android {
     compileSdk = Version.ANDROID_COMPILE_SDK
     defaultConfig {
         minSdk = Version.ANDROID_DEFAULT_MIN_SDK
+    }
+    @Suppress("UnstableApiUsage")
+    testOptions {
+        unitTests.all {
+            if (it.name != "testDebugUnitTest") {
+                it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
+                    isDisabled.set(true)
+                }
+            }
+        }
     }
 }
 

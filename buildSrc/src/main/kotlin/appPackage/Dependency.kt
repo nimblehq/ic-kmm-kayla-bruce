@@ -20,4 +20,8 @@ object Dependency {
         val NAVIGATION by lazy { "androidx.navigation:navigation-compose:${Version.COMPOSE_NAVIGATION}" }
         val COIL by lazy { "io.coil-kt:coil-compose:${Version.COMPOSE_COIL}" }
     }
+
+    object Kover {
+        val KOVER = "org.jetbrains.kotlinx:kover:${Version.KOVER}"
+    }
 }

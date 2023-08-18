@@ -1,5 +1,6 @@
 plugins {
     id(Plugin.ANDROID_APPLICATION)
+    id(Plugin.KOVER)
     kotlin(Plugin.ANDROID)
 }
 
@@ -35,6 +36,26 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    @Suppress("UnstableApiUsage")
+    testOptions {
+        unitTests {
+            // Robolectric resource processing/loading https://github.com/robolectric/robolectric/pull/4736
+            isIncludeAndroidResources = true
+        }
+        unitTests.all {
+            if (it.name != "testStagingDebugUnitTest") {
+                it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
+                    isDisabled.set(true)
+                }
+            }
+        }
+        animationsDisabled = true
+        packagingOptions {
+            jniLibs {
+                useLegacyPackaging = true
+            }
+        }
     }
 }
 

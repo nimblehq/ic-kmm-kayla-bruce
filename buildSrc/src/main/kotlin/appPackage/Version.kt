@@ -5,6 +5,7 @@ object Version {
     const val ANDROID_DEFAULT_MIN_SDK = 24
 
     const val DETEKT = "1.21.0"
+    const val KOVER = "0.6.1"
 
     const val KOTLIN = "1.8.21"
     const val GRADLE = "8.1.0"
