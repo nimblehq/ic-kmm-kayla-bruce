@@ -27,6 +27,10 @@ fun SplashScreen(
         delay(SHOW_LOGO_DELAY)
         shouldShowLogo = true
     }
+    LaunchedEffect(Unit) {
+        delay(SHOW_LOGO_DELAY + SHOW_LOGO_DURATION)
+        onNavigator.invoke()
+    }
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
@@ -46,9 +50,6 @@ fun SplashScreen(
                 contentDescription = null,
                 contentScale = ContentScale.Crop
             )
-            if (this.transition.currentState == this.transition.targetState) {
-                onNavigator()
-            }
         }
     }
 }
