@@ -1,10 +1,5 @@
 name: iOS - Deploy Production Builds To App Store
 
-# SECRETS needed:
-### SSH_PRIVATE_KEY for Match Repo
-### MATCH_PASS
-### APPSTORE_CONNECT_API_KEY
-
 on:
   push:
     branches:
@@ -37,7 +32,6 @@ jobs:
         run: |
           cd ..
           echo "$BUILD_KONFIG" > buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt
-
       - name: Setup Java JDK
         uses: actions/setup-java@v2.1.0
         with:
@@ -48,7 +42,6 @@ jobs:
         run: |
           cd ..
           ./gradlew generateDummyFramework
-
       - name: Bundle install
         run: bundle install
 
