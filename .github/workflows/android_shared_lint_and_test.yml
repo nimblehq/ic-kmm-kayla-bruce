@@ -1,12 +1,8 @@
-name: Android - Lint and Test
+name: Android and Shared - Lint and Test
 
 on:
   pull_request:
     types: [ opened, reopened, edited, synchronize, ready_for_review ]
-
-defaults:
-  run:
-    working-directory: android
 
 jobs:
   lint_and_test:
