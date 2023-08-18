@@ -22,7 +22,6 @@ import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.SurveyBut
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.SurveyTextField
 import kotlinx.coroutines.delay
 
-private const val SHOW_LOGO_DURATION = 750
 const val SHOW_LOGIN_DURATION = 700
 
 private val initialLogoOffset: Offset = Offset(0f, 0f)
@@ -31,24 +30,23 @@ private val finalLogoOffset = Offset(0f, -230f)
 @Composable
 fun SignInScreen() {
 
+
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
     var logoOffset by remember { mutableStateOf(initialLogoOffset) }
     var shouldShowLoginForm by remember { mutableStateOf(false) }
     val animateLogoOffset by animateOffsetAsState(
         targetValue = logoOffset,
-        animationSpec = tween(
-            durationMillis = SHOW_LOGIN_DURATION,
-            delayMillis = SHOW_LOGO_DURATION
-        ),
+        animationSpec = tween(durationMillis = SHOW_LOGIN_DURATION),
         label = ""
     )
 
     LaunchedEffect(Unit) {
-        delay(SHOW_LOGO_DURATION.toLong())
         logoOffset = finalLogoOffset
     }
 
     LaunchedEffect(Unit) {
-        delay(SHOW_LOGO_DURATION.toLong() + SHOW_LOGIN_DURATION.toLong())
+        delay(SHOW_LOGIN_DURATION.toLong())
         shouldShowLoginForm = true
     }
 
@@ -64,10 +62,7 @@ fun SignInScreen() {
                 .matchParentSize()
         )
 
-        AnimatedVisibility(
-            visible = true,
-            enter = fadeIn(animationSpec = tween(SHOW_LOGO_DURATION))
-        ) {
+        AnimatedVisibility(visible = true) {
             Image(
                 painter = painterResource(id = R.drawable.ic_logo_white),
                 contentDescription = null,
@@ -76,9 +71,6 @@ fun SignInScreen() {
             )
         }
     }
-
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
 
     AnimatedVisibility(
         visible = shouldShowLoginForm,
