@@ -37,7 +37,7 @@ fun SurveyTextField(
         placeholder = {
             Text(
                 text = placeholder,
-                style = MaterialTheme.typography.body1
+                style = MaterialTheme.typography.body1,
             )
         },
         singleLine = singleLine,
@@ -49,12 +49,12 @@ fun SurveyTextField(
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = Color.Transparent,
-            placeholderColor = Color(0x4DFFFFFF)
+            placeholderColor = Color(0x4DFFFFFF),
         ),
         visualTransformation = visualTransformation,
         keyboardOptions = KeyboardOptions(
             keyboardType = keyboardType,
-            imeAction = imeAction
+            imeAction = imeAction,
         ),
         keyboardActions = KeyboardActions(onDone = { focusManager.clearFocus() }),
         trailingIcon = trailingIcon,
@@ -62,7 +62,7 @@ fun SurveyTextField(
             .fillMaxWidth()
             .heightIn(min = 56.dp)
             .clip(RoundedCornerShape(8.dp))
-            .semantics { this.contentDescription = contentDescription }
+            .semantics { this.contentDescription = contentDescription },
     )
 }
 

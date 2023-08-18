@@ -19,7 +19,7 @@ fun SurveyNavHost(
     ) {
         composable(SurveyDestination.Splash) {
             SplashScreen(
-                onNavigator = {
+                onNavigate = {
                     navController.navigate(
                         route = SurveyDestination.SignIn.route,
                     )

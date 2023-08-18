@@ -18,7 +18,7 @@ private const val SHOW_LOGO_DURATION = 1500
 
 @Composable
 fun SplashScreen(
-    onNavigator: () -> Unit,
+    onNavigate: () -> Unit,
 ) {
     var shouldShowLogo by remember { mutableStateOf(false) }
 
@@ -28,7 +28,7 @@ fun SplashScreen(
     }
     LaunchedEffect(Unit) {
         delay(SHOW_LOGO_DELAY + SHOW_LOGO_DURATION)
-        onNavigator.invoke()
+        onNavigate.invoke()
     }
     Box(
         contentAlignment = Alignment.Center,

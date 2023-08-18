@@ -56,8 +56,7 @@ fun SignInScreen() {
             painter = painterResource(id = R.drawable.im_background_blur),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .matchParentSize()
+            modifier = Modifier.matchParentSize(),
         )
 
         AnimatedVisibility(visible = true) {
@@ -79,7 +78,7 @@ fun SignInScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .wrapContentHeight()
-                .padding(horizontal = 24.dp)
+                .padding(horizontal = 24.dp),
         ) {
             SurveyTextField(
                 text = email,
@@ -99,15 +98,15 @@ fun SignInScreen() {
                         text = "Forgot?",
                         color = Color.White.copy(alpha = 0.5f),
                         modifier = Modifier
-                            .padding(all = 16.dp)
+                            .padding(all = 16.dp),
                     )
-                }
+                },
             )
             SurveyButton(
                 modifier = Modifier
                     .fillMaxWidth(),
                 text = "Login",
-                onClicked = {}
+                onClicked = {},
             )
         }
     }
