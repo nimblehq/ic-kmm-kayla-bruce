@@ -6,4 +6,4 @@
 //  Copyright © 2023 orgName. All rights reserved.
 //
 
-import RswiftResources
+var localized: _R.string.localizable { R.string.localizable }
