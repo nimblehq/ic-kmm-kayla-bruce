@@ -39,13 +39,13 @@ jobs:
           echo $KMM_KONFIG_PROPERTIES | base64 --decode > buildKonfig.properties
 
       - name: Run Detekt
-        run: ../gradlew detekt
+        run: ./gradlew detekt
 
       - name: Run Lint
-        run: ../gradlew lintDebug
+        run: ./gradlew lintDebug
 
       - name: Run unit tests with Kover
-        run: ../gradlew koverMergedXmlReport
+        run: ./gradlew koverMergedXmlReport
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
