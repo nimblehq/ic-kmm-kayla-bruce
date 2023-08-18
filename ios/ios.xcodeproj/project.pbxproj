@@ -12,6 +12,9 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		224AA3E32A8A930300800A61 /* iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA3E22A8A930300800A61 /* iosTests.swift */; };
 		224AA4032A8BD18D00800A61 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4022A8BD18D00800A61 /* R.generated.swift */; };
+		224AA4112A8E2B1C00800A61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 224AA4132A8E2B1C00800A61 /* Localizable.strings */; };
+		224AA4162A8E2B2B00800A61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 224AA4182A8E2B2B00800A61 /* Localizable.strings */; };
+		224AA41A2A8E2B8700800A61 /* R+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4192A8E2B8700800A61 /* R+Localization.swift */; };
 		227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227239202A84E8A60040B3CF /* R+FontResource.swift */; };
 		2291AECC2A84991500F262EA /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */; };
 		2291AECD2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECB2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf */; };
@@ -46,6 +49,9 @@
 		224AA4022A8BD18D00800A61 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		224AA4062A8BE0CB00800A61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		224AA4082A8BE0CB00800A61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		224AA4122A8E2B1C00800A61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		224AA4172A8E2B2B00800A61 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		224AA4192A8E2B8700800A61 /* R+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Localization.swift"; sourceTree = "<group>"; };
 		227239202A84E8A60040B3CF /* R+FontResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+FontResource.swift"; sourceTree = "<group>"; };
 		227239282A85E2BA0040B3CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
@@ -134,6 +140,15 @@
 			path = Production;
 			sourceTree = "<group>";
 		};
+		224AA40C2A8E2A8900800A61 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				224AA4132A8E2B1C00800A61 /* Localizable.strings */,
+				224AA4182A8E2B2B00800A61 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		2272391F2A84E88A0040B3CF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +162,7 @@
 			children = (
 				224AA4022A8BD18D00800A61 /* R.generated.swift */,
 				227239202A84E8A60040B3CF /* R+FontResource.swift */,
+				224AA4192A8E2B8700800A61 /* R+Localization.swift */,
 			);
 			path = Rswift;
 			sourceTree = "<group>";
@@ -185,6 +201,7 @@
 			children = (
 				2291AEC92A8498E600F262EA /* Assets */,
 				2291AEC82A8498D900F262EA /* Fonts */,
+				224AA40C2A8E2A8900800A61 /* Localizations */,
 				2291AED12A8499A800F262EA /* Lotties */,
 			);
 			path = Resources;
@@ -460,6 +477,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 7555FF72242A565900829871;
 			packageReferences = (
@@ -486,6 +504,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224AA4112A8E2B1C00800A61 /* Localizable.strings in Resources */,
+				224AA4162A8E2B2B00800A61 /* Localizable.strings in Resources */,
 				2291AECC2A84991500F262EA /* NeuzeitSLTStd-Book.otf in Resources */,
 				2291AECD2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf in Resources */,
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
@@ -594,6 +614,7 @@
 				22A41E992A85F2D200C3265C /* Font.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				2291AEE02A849B1100F262EA /* HomeContainerView.swift in Sources */,
+				224AA41A2A8E2B8700800A61 /* R+Localization.swift in Sources */,
 				2291AEE62A849D0B00F262EA /* HomeHeaderUiModel.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				2291AEE92A84A01200F262EA /* Image+Url.swift in Sources */,
@@ -612,6 +633,25 @@
 			targetProxy = 224AA3E42A8A930300800A61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		224AA4132A8E2B1C00800A61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224AA4122A8E2B1C00800A61 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		224AA4182A8E2B2B00800A61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				224AA4172A8E2B2B00800A61 /* vi */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		224AA3E62A8A930400800A61 /* DebugProduction */ = {
