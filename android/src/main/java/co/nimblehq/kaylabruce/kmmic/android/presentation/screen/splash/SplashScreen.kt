@@ -16,7 +16,6 @@ import kotlinx.coroutines.delay
 private const val SHOW_LOGO_DELAY = 1000L
 private const val SHOW_LOGO_DURATION = 1500
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun SplashScreen(
     onNavigator: () -> Unit,

@@ -29,8 +29,6 @@ private val finalLogoOffset = Offset(0f, -230f)
 
 @Composable
 fun SignInScreen() {
-
-
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var logoOffset by remember { mutableStateOf(initialLogoOffset) }
