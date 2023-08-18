@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - chore/4-cd-ios
+
   workflow_dispatch:
 
 defaults:
