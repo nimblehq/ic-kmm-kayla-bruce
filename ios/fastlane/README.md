@@ -55,6 +55,22 @@ Sync Adhoc Production match signing
 
 Sync AppStore match signing
 
+### ios build_and_upload_staging_app
+
+```sh
+[bundle exec] fastlane ios build_and_upload_staging_app
+```
+
+Build and upload staging app to Firebase
+
+### ios build_and_upload_production_app
+
+```sh
+[bundle exec] fastlane ios build_and_upload_production_app
+```
+
+Build and upload Production app to Firebase
+
 ### ios register_new_device
 
 ```sh

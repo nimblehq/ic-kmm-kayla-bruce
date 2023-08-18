@@ -11,4 +11,8 @@ class Environments
     def self.MANUAL_VERSION
       ENV['MANUAL_VERSION']
     end
+
+    def self.FIREBASE_TOKEN
+        ENV['FIREBASE_TOKEN']
+    end
   end

@@ -1,0 +1,66 @@
+name: iOS - Deploy Production Builds To App Store
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ios
+
+jobs:
+  build_and_upload_to_app_store:
+    name: Build
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Konfig Properties
+        env:
+          BUILD_KONFIG: ${{ secrets.BUILD_KONFIG }}
+        run: |
+          cd ..
+          echo "$BUILD_KONFIG" > buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.1.0
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Generate KMM frameworks for Cocoapods
+        run: |
+          cd ..
+          ./gradlew generateDummyFramework
+      - name: Bundle install
+        run: bundle install
+
+      - name: Install Pods Dependencies
+        run: bundle exec pod install
+
+      - name: Match Adhoc
+        run: bundle exec fastlane sync_adhoc_production_signing
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASS }}
+          CI: ${{ secrets.CI }}
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.0-beta'
+
+      - name: Build App and Distribute to Firebase
+        run: bundle exec fastlane build_and_upload_production_app
+        env:
+          APPSTORE_CONNECT_API_KEY: ${{ secrets.APPSTORE_CONNECT_API_KEY }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          CI: ${{ secrets.CI }}
