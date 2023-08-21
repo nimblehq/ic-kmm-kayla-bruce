@@ -1,4 +1,4 @@
-package co.nimblehq.kaylabruce.kmmic.android.presentation.modules.home.home_header
+package co.nimblehq.kaylabruce.kmmic.android.presentation.modules.home.header
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -15,9 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import co.nimblehq.kaylabruce.kmmic.android.presentation.ui_models.HomeHeaderUiModel
+import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.HomeHeaderUiModel
 import coil.compose.AsyncImage
 
+@Suppress("MagicNumber")
 @Composable
 fun HomeHeaderView(
     uiModel: HomeHeaderUiModel,

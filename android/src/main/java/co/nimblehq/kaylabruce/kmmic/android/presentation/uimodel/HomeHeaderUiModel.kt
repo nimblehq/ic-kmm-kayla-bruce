@@ -1,4 +1,4 @@
-package co.nimblehq.kaylabruce.kmmic.android.presentation.ui_models
+package co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel
 
 data class HomeHeaderUiModel(
     val imageUrl: String,
