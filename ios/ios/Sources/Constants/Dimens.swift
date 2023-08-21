@@ -21,9 +21,11 @@ enum Dimens {
 }
 
 enum PreviewDimens {
-
+    
     /// 300.0
     static let mediumWidth: CGFloat = 300
     /// 100.0
     static let smallHeight: CGFloat = 100
+    /// 300.0
+    static let mediumHeight: CGFloat = 300
 }
