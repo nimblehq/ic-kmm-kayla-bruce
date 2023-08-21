@@ -5,7 +5,7 @@ import FirebaseCore
 struct SurveyApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            HomeContainerView()
                 .preferredColorScheme(.dark)
         }
     }
