@@ -29,8 +29,6 @@ private val finalLogoOffset = Offset(0f, -230f)
 
 @Composable
 fun SignInScreen() {
-    var email by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
     var logoOffset by remember { mutableStateOf(initialLogoOffset) }
     var shouldShowLoginForm by remember { mutableStateOf(false) }
     val animateLogoOffset by animateOffsetAsState(
@@ -73,42 +71,49 @@ fun SignInScreen() {
         visible = shouldShowLoginForm,
         enter = fadeIn(animationSpec = tween(SHOW_LOGIN_DURATION)),
     ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(20.dp),
+        SignInForm()
+    }
+}
+
+@Composable
+fun SignInForm() {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    Column(
+        verticalArrangement = Arrangement.spacedBy(20.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .wrapContentHeight()
+            .padding(horizontal = 24.dp),
+    ) {
+        SurveyTextField(
+            text = email,
+            onTextChange = { email = it },
+            placeholder = "Email",
+            keyboardType = KeyboardType.Email,
+            imeAction = ImeAction.Next,
+        )
+        SurveyTextField(
+            text = password,
+            onTextChange = { password = it },
+            placeholder = "Password",
+            visualTransformation = PasswordVisualTransformation(),
+            imeAction = ImeAction.Done,
+            trailingIcon = {
+                Text(
+                    text = "Forgot?",
+                    color = Color.White.copy(alpha = 0.5f),
+                    modifier = Modifier
+                        .padding(all = 16.dp),
+                )
+            },
+        )
+        SurveyButton(
             modifier = Modifier
-                .fillMaxSize()
-                .wrapContentHeight()
-                .padding(horizontal = 24.dp),
-        ) {
-            SurveyTextField(
-                text = email,
-                onTextChange = { email = it },
-                placeholder = "Email",
-                keyboardType = KeyboardType.Email,
-                imeAction = ImeAction.Next,
-            )
-            SurveyTextField(
-                text = password,
-                onTextChange = { password = it },
-                placeholder = "Password",
-                visualTransformation = PasswordVisualTransformation(),
-                imeAction = ImeAction.Done,
-                trailingIcon = {
-                    Text(
-                        text = "Forgot?",
-                        color = Color.White.copy(alpha = 0.5f),
-                        modifier = Modifier
-                            .padding(all = 16.dp),
-                    )
-                },
-            )
-            SurveyButton(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                text = "Login",
-                onClick = {},
-            )
-        }
+                .fillMaxWidth(),
+            text = "Login",
+            onClick = {},
+        )
     }
 }
 
