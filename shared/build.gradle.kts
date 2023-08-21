@@ -1,10 +1,12 @@
 import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBuildType
 
 plugins {
     kotlin(Plugin.MULTIPLATFORM)
     kotlin(Plugin.COCOAPODS)
     id(Plugin.ANDROID_LIBRARY)
     id(Plugin.BUILD_KONFIG)
+    id(Plugin.KOVER)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -31,7 +33,12 @@ kotlin {
         podfile = project.file("../ios/Podfile")
         framework {
             baseName = "shared"
+            linkerOpts += "-ld64"
         }
+        xcodeConfigurationToNativeBuildType["DebugStaging"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["DebugProduction"] = NativeBuildType.DEBUG
+        xcodeConfigurationToNativeBuildType["ReleaseStaging"] = NativeBuildType.RELEASE
+        xcodeConfigurationToNativeBuildType["ReleaseProduction"] = NativeBuildType.RELEASE
     }
     
     sourceSets {
@@ -54,13 +61,73 @@ android {
     defaultConfig {
         minSdk = Version.ANDROID_DEFAULT_MIN_SDK
     }
+    @Suppress("UnstableApiUsage")
+    testOptions {
+        unitTests.all {
+            if (it.name != "testDebugUnitTest") {
+                it.extensions.configure(kotlinx.kover.api.KoverTaskExtension::class) {
+                    isDisabled.set(true)
+                }
+            }
+        }
+    }
 }
 
 buildkonfig {
     packageName = "co.nimblehq.kaylabruce.kmmic"
 
-    // Default for Flavors.STAGING
+    // Default for Flavor.STAGING
     defaultConfigs {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.BASE_URL_STAGING
+        )
+    }
 
+    defaultConfigs(Configuration.Flavor.PRODUCTION) {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_PRODUCTION
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_PRODUCTION
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.BASE_URL_PRODUCTION
+        )
+    }
+
+    defaultConfigs(Configuration.Flavor.STAGING) {
+        buildConfigField(
+            STRING,
+            "CLIENT_ID",
+            BuildKonfig.CLIENT_ID_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "CLIENT_SECRET",
+            BuildKonfig.CLIENT_SECRET_STAGING
+        )
+        buildConfigField(
+            STRING,
+            "BASE_URL",
+            BuildKonfig.BASE_URL_STAGING
+        )
     }
 }

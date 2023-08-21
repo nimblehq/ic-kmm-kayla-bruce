@@ -9,39 +9,6 @@
 import SwiftUI
 import RswiftResources
 
-extension Font {
-
-    private static func font(
-        weight: FontWeight,
-        size: FontSize
-    ) -> Font {
-        switch weight {
-        case .regular:
-            return Font.custom(
-                RFontResource.neuzeitSLTStdBook,
-                size: size.size
-            )
-        case .bold:
-            return Font.custom(
-                RFontResource.neuzeitSLTStdBookHeavy,
-                size: size.size
-            )
-        }
-    }
-
-    // Tiny fonts
-
-    // Small fonts
-    static var boldSmall: Font { font(weight: .bold, size: .small) }
-
-    // Medium fonts
-
-    // Title fonts
-
-    // Display fonts
-    static var boldDisplay: Font { font(weight: .bold, size: .display) }
-}
-
 enum FontWeight {
 
     case regular
@@ -71,6 +38,39 @@ enum FontSize {
         case .body: return 20.0
         case .title: return 28.0
         case .display: return 34.0
+        }
+    }
+}
+
+extension Font {
+
+    // Tiny fonts
+
+    // Small fonts
+    static var boldSmall: Font { font(weight: .bold, size: .small) }
+
+    // Medium fonts
+
+    // Title fonts
+
+    // Display fonts
+    static var boldDisplay: Font { font(weight: .bold, size: .display) }
+
+    private static func font(
+            weight: FontWeight,
+            size: FontSize
+    ) -> Font {
+        switch weight {
+        case .regular:
+            return Font.custom(
+                RFontResource.neuzeitSLTStdBook,
+                size: size.size
+            )
+        case .bold:
+            return Font.custom(
+                RFontResource.neuzeitSLTStdBookHeavy,
+                size: size.size
+            )
         }
     }
 }

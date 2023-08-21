@@ -48,3 +48,6 @@ xcuserdata
 
 # iOS
 *.generated.swift
+.secrets
+ios/fastlane/report.xml
+ios/fastlane/test_output

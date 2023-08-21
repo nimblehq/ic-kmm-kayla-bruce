@@ -55,14 +55,6 @@ Sync Adhoc Production match signing
 
 Sync AppStore match signing
 
-### ios register_new_device
-
-```sh
-[bundle exec] fastlane ios register_new_device
-```
-
-Register new devices
-
 ### ios build_and_upload_staging_app
 
 ```sh
@@ -79,21 +71,13 @@ Build and upload staging app to Firebase
 
 Build and upload Production app to Firebase
 
-### ios build_and_upload_appstore_app
+### ios register_new_device
 
 ```sh
-[bundle exec] fastlane ios build_and_upload_appstore_app
+[bundle exec] fastlane ios register_new_device
 ```
 
-Build and upload Production app to App Store
-
-### ios set_connect_api_key
-
-```sh
-[bundle exec] fastlane ios set_connect_api_key
-```
-
-set App Store Connect API Key
+Register new devices
 
 ### ios clean_up
 
@@ -102,14 +86,6 @@ set App Store Connect API Key
 ```
 
 Clean up derived data
-
-### ios clean_up_xcov
-
-```sh
-[bundle exec] fastlane ios clean_up_xcov
-```
-
-Clean up xcov output
 
 ----
 

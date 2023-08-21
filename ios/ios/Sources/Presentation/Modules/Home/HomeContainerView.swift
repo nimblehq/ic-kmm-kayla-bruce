@@ -16,7 +16,7 @@ struct HomeContainerView: View {
                 let homeHeaderUiModel = HomeHeaderUiModel(
                     imageUrl: "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
                     dateText: "Monday, June 15",
-                    todayText: "Today"
+                    todayText: localized.homeHeaderToday()
                 )
                 HomeHeaderView(homeHeader: homeHeaderUiModel) {
                     // TODO: Tap profile image

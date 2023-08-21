@@ -10,7 +10,6 @@ import SwiftUI
 private let showLogoDelay = 0.5
 private let showLogoDuration = 1.0
 
-
 struct SplashView: View {
 
     @State private var isLoaded = false

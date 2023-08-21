@@ -18,5 +18,10 @@ object Dependency {
         val UI_TOOLING_PREVIEW by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.COMPOSE_UI}" }
         val MATERIAL by lazy {"androidx.compose.material:material:${Version.COMPOSE_MATERIAL}" }
         val NAVIGATION by lazy { "androidx.navigation:navigation-compose:${Version.COMPOSE_NAVIGATION}" }
+        val COIL by lazy { "io.coil-kt:coil-compose:${Version.COMPOSE_COIL}" }
+    }
+
+    object Kover {
+        val KOVER = "org.jetbrains.kotlinx:kover:${Version.KOVER}"
     }
 }
