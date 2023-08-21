@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:android/src/main/java/co/nimblehq/kaylabruce/kmmic/android/presentation/modules/home/header/HomeHeaderView.kt
-package co.nimblehq.kaylabruce.kmmic.android.presentation.modules.home.header
-========
 package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.home_header
->>>>>>>> 3f3387b ([#9] Refactor code and create login UI screen):android/src/main/java/co/nimblehq/kaylabruce/kmmic/android/presentation/screen/home/home_header/HomeHeaderView.kt
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
