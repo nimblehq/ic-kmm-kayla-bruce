@@ -1,4 +1,4 @@
-package co.nimblehq.kaylabruce.kmmic.android.presentation.modules
+package co.nimblehq.kaylabruce.kmmic.android.presentation.screen
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
