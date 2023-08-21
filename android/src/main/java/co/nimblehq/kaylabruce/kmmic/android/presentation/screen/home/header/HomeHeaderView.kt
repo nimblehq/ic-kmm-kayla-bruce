@@ -1,4 +1,4 @@
-package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.home_header
+package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.header
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

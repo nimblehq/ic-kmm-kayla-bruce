@@ -44,12 +44,12 @@ fun SurveyTextField(
         colors = TextFieldDefaults.textFieldColors(
             textColor = Color.White,
             cursorColor = Color.White,
-            backgroundColor = Color(0x2EFFFFFF),
+            backgroundColor = Color.White.copy(alpha = 0.2f),
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = Color.Transparent,
-            placeholderColor = Color(0x4DFFFFFF),
+            placeholderColor = Color.White.copy(alpha = 0.3f),
         ),
         visualTransformation = visualTransformation,
         keyboardOptions = KeyboardOptions(
