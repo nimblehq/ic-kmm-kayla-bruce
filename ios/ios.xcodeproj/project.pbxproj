@@ -20,6 +20,7 @@
 		224AA4222A93B0FC00800A61 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4212A93B0FC00800A61 /* PageControl.swift */; };
 		224AA4252A93B2B400800A61 /* R+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4242A93B2B400800A61 /* R+Assets.swift */; };
 		224AA4272A93B35200800A61 /* R+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4262A93B35200800A61 /* R+SwiftUI.swift */; };
+		224AA4352A94AA7800800A61 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4342A94AA7800800A61 /* EdgeInsets.swift */; };
 		227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227239202A84E8A60040B3CF /* R+FontResource.swift */; };
 		2291AECC2A84991500F262EA /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */; };
 		2291AECD2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECB2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf */; };
@@ -62,6 +63,7 @@
 		224AA4212A93B0FC00800A61 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		224AA4242A93B2B400800A61 /* R+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Assets.swift"; sourceTree = "<group>"; };
 		224AA4262A93B35200800A61 /* R+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+SwiftUI.swift"; sourceTree = "<group>"; };
+		224AA4342A94AA7800800A61 /* EdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
 		227239202A84E8A60040B3CF /* R+FontResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+FontResource.swift"; sourceTree = "<group>"; };
 		227239282A85E2BA0040B3CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
@@ -378,9 +380,10 @@
 		2291AEE72A849FF400F262EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				224AA4342A94AA7800800A61 /* EdgeInsets.swift */,
+				22A41E982A85F2D200C3265C /* Font.swift */,
 				2291AEE82A84A01200F262EA /* Image+Url.swift */,
 				2291AEEA2A84BA9B00F262EA /* String.swift */,
-				22A41E982A85F2D200C3265C /* Font.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */,
 				22A41E992A85F2D200C3265C /* Font.swift in Sources */,
 				224AA41D2A8F52D800800A61 /* SurveyListView.swift in Sources */,
+				224AA4352A94AA7800800A61 /* EdgeInsets.swift in Sources */,
 				224AA41F2A8F544500800A61 /* SurveyItemView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				2291AEE02A849B1100F262EA /* HomeContainerView.swift in Sources */,
