@@ -11,28 +11,27 @@ import SwiftUI
 struct HomeContainerView: View {
 
     var body: some View {
-        GeometryReader(content: { geometry in
-            ZStack {
-                SurveyListView()
-                    .edgesIgnoringSafeArea(.all)
+        ZStack {
+            SurveyListView()
+                .edgesIgnoringSafeArea(.all)
 
-                VStack {
-                    let homeHeaderUiModel = HomeHeaderUiModel(
-                        imageUrl: "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
-                        dateText: "Monday, June 15",
-                        todayText: localized.homeHeaderToday()
-                    )
-                    HomeHeaderView(homeHeader: homeHeaderUiModel) {
-                        // TODO: Tap profile image
-                        print("Tap profile image")
-                    }
-                    Spacer()
+            VStack {
+                let homeHeaderUiModel = HomeHeaderUiModel(
+                    imageUrl: "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
+                    dateText: "Monday, June 15",
+                    todayText: localized.homeHeaderToday()
+                )
+                HomeHeaderView(homeHeader: homeHeaderUiModel) {
+                    // TODO: Tap profile image
+                    print("Tap profile image")
                 }
+                Spacer()
             }
-        })
+        }
     }
 }
 
 #Preview {
     HomeContainerView()
+        .preferredColorScheme(.dark)
 }
