@@ -21,6 +21,11 @@
 		224AA4252A93B2B400800A61 /* R+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4242A93B2B400800A61 /* R+Assets.swift */; };
 		224AA4272A93B35200800A61 /* R+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4262A93B35200800A61 /* R+SwiftUI.swift */; };
 		224AA4352A94AA7800800A61 /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4342A94AA7800800A61 /* EdgeInsets.swift */; };
+		224AA42B2A945C7800800A61 /* SurveyListSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA42A2A945C7800800A61 /* SurveyListSkeletonView.swift */; };
+		224AA42D2A945C8300800A61 /* HomeHeaderSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA42C2A945C8300800A61 /* HomeHeaderSkeletonView.swift */; };
+		224AA42F2A945D6000800A61 /* SkeletonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA42E2A945D6000800A61 /* SkeletonText.swift */; };
+		224AA4312A9461A700800A61 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4302A9461A700800A61 /* Colors.swift */; };
+		224AA4332A94633D00800A61 /* SkeletonBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224AA4322A94633D00800A61 /* SkeletonBox.swift */; };
 		227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227239202A84E8A60040B3CF /* R+FontResource.swift */; };
 		2291AECC2A84991500F262EA /* NeuzeitSLTStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */; };
 		2291AECD2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2291AECB2A84991500F262EA /* NeuzeitSLTStd-BookHeavy.otf */; };
@@ -68,6 +73,11 @@
 		224AA4242A93B2B400800A61 /* R+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Assets.swift"; sourceTree = "<group>"; };
 		224AA4262A93B35200800A61 /* R+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+SwiftUI.swift"; sourceTree = "<group>"; };
 		224AA4342A94AA7800800A61 /* EdgeInsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
+		224AA42A2A945C7800800A61 /* SurveyListSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListSkeletonView.swift; sourceTree = "<group>"; };
+		224AA42C2A945C8300800A61 /* HomeHeaderSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderSkeletonView.swift; sourceTree = "<group>"; };
+		224AA42E2A945D6000800A61 /* SkeletonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonText.swift; sourceTree = "<group>"; };
+		224AA4302A9461A700800A61 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		224AA4322A94633D00800A61 /* SkeletonBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonBox.swift; sourceTree = "<group>"; };
 		227239202A84E8A60040B3CF /* R+FontResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+FontResource.swift"; sourceTree = "<group>"; };
 		227239282A85E2BA0040B3CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2291AECA2A84991500F262EA /* NeuzeitSLTStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NeuzeitSLTStd-Book.otf"; sourceTree = "<group>"; };
@@ -169,19 +179,22 @@
 			path = Localizations;
 			sourceTree = "<group>";
 		};
-		224AA41B2A8F52B800800A61 /* SurveyListView */ = {
+		224AA41B2A8F52B800800A61 /* SurveyList */ = {
 			isa = PBXGroup;
 			children = (
-				224AA41C2A8F52D800800A61 /* SurveyListView.swift */,
 				224AA41E2A8F544500800A61 /* SurveyItemView.swift */,
+				224AA42A2A945C7800800A61 /* SurveyListSkeletonView.swift */,
+				224AA41C2A8F52D800800A61 /* SurveyListView.swift */,
 			);
-			path = SurveyListView;
+			path = SurveyList;
 			sourceTree = "<group>";
 		};
 		224AA4202A93B0F200800A61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				224AA4212A93B0FC00800A61 /* PageControl.swift */,
+				224AA4322A94633D00800A61 /* SkeletonBox.swift */,
+				224AA42E2A945D6000800A61 /* SkeletonText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				22B4B5C92A861D0F00041D92 /* Dimens.swift */,
+				224AA4302A9461A700800A61 /* Colors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -364,9 +378,9 @@
 		2291AEDE2A849AF800F262EA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				224AA41B2A8F52B800800A61 /* SurveyListView */,
-				2291AEE12A849C5300F262EA /* HomeHeader */,
 				2291AEDF2A849B1100F262EA /* HomeContainerView.swift */,
+				2291AEE12A849C5300F262EA /* HomeHeader */,
+				224AA41B2A8F52B800800A61 /* SurveyList */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -374,6 +388,7 @@
 		2291AEE12A849C5300F262EA /* HomeHeader */ = {
 			isa = PBXGroup;
 			children = (
+				224AA42C2A945C8300800A61 /* HomeHeaderSkeletonView.swift */,
 				2291AEE22A849C6200F262EA /* HomeHeaderView.swift */,
 			);
 			path = HomeHeader;
@@ -674,17 +689,22 @@
 				22AF67842A975B91001D81FA /* SurveyDetailView.swift in Sources */,
 				22AF678C2A9771CA001D81FA /* SurveyQuestionUiModel.swift in Sources */,
 				22AF678A2A977197001D81FA /* SurveyQuestionView.swift in Sources */,
+				224AA4312A9461A700800A61 /* Colors.swift in Sources */,
 				22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */,
+				224AA42F2A945D6000800A61 /* SkeletonText.swift in Sources */,
 				2291AEE32A849C6200F262EA /* HomeHeaderView.swift in Sources */,
 				227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */,
 				22A41E992A85F2D200C3265C /* Font.swift in Sources */,
+				224AA42D2A945C8300800A61 /* HomeHeaderSkeletonView.swift in Sources */,
 				224AA41D2A8F52D800800A61 /* SurveyListView.swift in Sources */,
 				224AA4352A94AA7800800A61 /* EdgeInsets.swift in Sources */,
+				224AA4332A94633D00800A61 /* SkeletonBox.swift in Sources */,
 				224AA41F2A8F544500800A61 /* SurveyItemView.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				2291AEE02A849B1100F262EA /* HomeContainerView.swift in Sources */,
 				224AA41A2A8E2B8700800A61 /* R+Localization.swift in Sources */,
 				224AA4252A93B2B400800A61 /* R+Assets.swift in Sources */,
+				224AA42B2A945C7800800A61 /* SurveyListSkeletonView.swift in Sources */,
 				2291AEE62A849D0B00F262EA /* HomeHeaderUiModel.swift in Sources */,
 				22AF67862A975C3D001D81FA /* SurveyDetailUiModel.swift in Sources */,
 				224AA4222A93B0FC00800A61 /* PageControl.swift in Sources */,

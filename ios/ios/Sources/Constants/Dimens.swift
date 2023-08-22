@@ -18,6 +18,8 @@ enum Dimens {
     static let medium: CGFloat = 16.0
     /// 20.0
     static let large: CGFloat = 20.0
+    /// 40.0
+    static let display: CGFloat = 40.0
 }
 
 enum PreviewDimens {
