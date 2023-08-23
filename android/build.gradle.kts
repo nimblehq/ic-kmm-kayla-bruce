@@ -31,9 +31,9 @@ android {
     signingConfigs {
         create(Configuration.BuildTypes.RELEASE) {
             storeFile = file("../config/release.keystore")
-            storePassword = keystoreProperties.getProperty("KEYSTORE_PASSWORD") as String
-            keyPassword = keystoreProperties.getProperty("KEY_PASSWORD") as String
-            keyAlias = keystoreProperties.getProperty("KEY_ALIAS") as String
+            storePassword = keystoreProperties.getProperty("KEYSTORE_PASSWORD")
+            keyPassword = keystoreProperties.getProperty("KEY_PASSWORD")
+            keyAlias = keystoreProperties.getProperty("KEY_ALIAS")
         }
     }
     buildTypes {
