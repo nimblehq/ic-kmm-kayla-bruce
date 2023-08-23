@@ -100,4 +100,8 @@ dependencies {
     implementation(Dependency.Firebase.FIREBASE)
     implementation(Dependency.Compose.FOUNDATION)
     implementation(Dependency.Google.ACCOMPANIST)
+    implementation(Dependency.Koin.CORE)
+    implementation(Dependency.Koin.COMPOSE)
+    implementation(Dependency.Koin.ANDROID)
+    implementation(Dependency.Timber.TIMBER)
 }
