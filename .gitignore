@@ -52,3 +52,6 @@ buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt
 .secrets
 ios/fastlane/report.xml
 ios/fastlane/test_output
+
+# Android
+signing.properties
