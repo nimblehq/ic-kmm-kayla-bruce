@@ -3,7 +3,7 @@ name: Android - Deploy Production Builds To Firebase
 on:
   push:
     branches:
-      - chore/7-setup-android-cd
+      - main
   workflow_dispatch:
 
 jobs:
