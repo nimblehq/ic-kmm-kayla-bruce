@@ -98,4 +98,8 @@ dependencies {
     implementation(Dependency.Compose.NAVIGATION)
     implementation(Dependency.Compose.COIL)
     implementation(Dependency.Firebase.FIREBASE)
+    implementation(Dependency.Koin.CORE)
+    implementation(Dependency.Koin.COMPOSE)
+    implementation(Dependency.Koin.ANDROID)
+    implementation(Dependency.Timber.TIMBER)
 }

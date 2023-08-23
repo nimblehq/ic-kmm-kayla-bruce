@@ -6,6 +6,7 @@ object Plugin {
     const val DETEKT = "io.gitlab.arturbosch.detekt"
     const val KOVER = "kover"
     const val KOVER_PACKAGE = "org.jetbrains.kotlinx.kover"
+    const val SERIALIZATION = "plugin.serialization"
 
     const val MULTIPLATFORM = "multiplatform"
     const val COCOAPODS = "native.cocoapods"
