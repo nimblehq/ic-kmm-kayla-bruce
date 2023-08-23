@@ -99,4 +99,5 @@ dependencies {
     implementation(Dependency.Compose.COIL)
     implementation(Dependency.Firebase.FIREBASE)
     implementation(Dependency.Compose.FOUNDATION)
+    implementation(Dependency.Google.ACCOMPANIST)
 }

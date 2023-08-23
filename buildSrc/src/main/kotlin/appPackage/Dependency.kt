@@ -28,6 +28,7 @@ object Dependency {
 
     object Google {
         const val GOOGLE_SERVICES = "com.google.gms:google-services:${Version.GOOGLE_SERVICES}"
+        const val ACCOMPANIST = "com.google.accompanist:accompanist-placeholder:${Version.GOOGLE_ACCOMPANIST}"
     }
 
     object Firebase {
