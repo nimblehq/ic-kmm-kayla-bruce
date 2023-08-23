@@ -16,12 +16,20 @@ object Dependency {
         val UI_GRAPHICS by lazy { "androidx.compose.ui:ui-graphics:${Version.COMPOSE_UI}" }
         val UI_TOOLING by lazy { "androidx.compose.ui:ui-tooling:${Version.COMPOSE_UI}" }
         val UI_TOOLING_PREVIEW by lazy { "androidx.compose.ui:ui-tooling-preview:${Version.COMPOSE_UI}" }
-        val MATERIAL by lazy {"androidx.compose.material:material:${Version.COMPOSE_MATERIAL}" }
+        val MATERIAL by lazy { "androidx.compose.material:material:${Version.COMPOSE_MATERIAL}" }
         val NAVIGATION by lazy { "androidx.navigation:navigation-compose:${Version.COMPOSE_NAVIGATION}" }
         val COIL by lazy { "io.coil-kt:coil-compose:${Version.COMPOSE_COIL}" }
     }
 
     object Kover {
         val KOVER = "org.jetbrains.kotlinx:kover:${Version.KOVER}"
+    }
+
+    object Google {
+        const val GOOGLE_SERVICES = "com.google.gms:google-services:${Version.GOOGLE_SERVICES}"
+    }
+
+    object Firebase {
+        const val FIREBASE = "com.google.firebase:firebase-bom:${Version.FIREBASE}"
     }
 }

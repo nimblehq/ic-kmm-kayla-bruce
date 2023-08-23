@@ -1,0 +1,78 @@
+name: Android - Deploy Production Builds To Firebase
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy_android_production_to_firebase:
+    name: Deploy Android Production to Firebase
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Konfig Properties
+        env:
+          BUILD_KONFIG: ${{ secrets.BUILD_KONFIG }}
+        run: |
+          echo "$BUILD_KONFIG" > buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt
+
+      - name: Setup Google Services
+        env:
+          GOOGLE_SERVICES_JSON_PRODUCTION: ${{ secrets.GOOGLE_SERVICES_JSON_PRODUCTION }}
+          GOOGLE_SERVICES_JSON_STAGING: ${{ secrets.GOOGLE_SERVICES_JSON_STAGING }}
+        run: |
+          mkdir -p android/src/production
+          mkdir -p android/src/staging
+          echo $GOOGLE_SERVICES_JSON_STAGING > android/src/staging/google-services.json
+          echo $GOOGLE_SERVICES_JSON_PRODUCTION > android/src/production/google-services.json
+
+      - name: Setup Android release signing
+        env:
+          ANDROID_RELEASE_KEYSTORE: ${{ secrets.ANDROID_RELEASE_KEYSTORE }}
+          ANDROID_SIGNING_PROPERTIES: ${{ secrets.ANDROID_SIGNING_PROPERTIES }}
+        run: |
+          mkdir -p config
+          echo $ANDROID_RELEASE_KEYSTORE | base64 --decode > config/release.keystore
+          echo $ANDROID_SIGNING_PROPERTIES | base64 --decode > signing.properties
+
+      - name: Cache Gradle
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches/modules-*
+            ~/.gradle/caches/jars-*
+            ~/.gradle/caches/build-cache-*
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Run unit tests with Kover
+        run: ./gradlew koverMergedXmlReport
+
+      - uses: chkfung/android-version-actions@v1.1
+        with:
+          gradlePath: android/build.gradle.kts
+          versionCode: ${{ github.run_number }}
+
+      - name: Build Production APK
+        run: ./gradlew assembleProductionRelease
+
+      - name: Deploy production to Firebase
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{ secrets.FIREBASE_APP_ID_PRODUCTION }}
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_DISTRIBUTION_CREDENTIAL_FILE_CONTENT }}
+          groups: nimble-dev
+          file: android/build/outputs/apk/production/release/android-production-release.apk
