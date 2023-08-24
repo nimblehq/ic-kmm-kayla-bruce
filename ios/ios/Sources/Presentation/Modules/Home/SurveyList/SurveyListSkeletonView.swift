@@ -19,12 +19,19 @@ struct SurveyListSkeletonView: View {
             ) {
                 Spacer()
                 SkeletonText(
+                    width: 100,
+                    height: .medium,
+                    lines: 1
+                )
+                SkeletonText(
                     width: geometry.size.width - 100.0,
-                    height: .large, lines: 2
+                    height: .medium,
+                    lines: 2
                 )
                 SkeletonText(
                     width: geometry.size.width - 50,
-                    height: .medium, lines: 2
+                    height: .medium,
+                    lines: 2
                 )
             }.padding([.horizontal, .bottom], Dimens.medium)
         })

@@ -14,11 +14,19 @@ struct HomeHeaderSkeletonView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer().frame(height: Dimens.medium)
-            SkeletonText(width: 150.0, height: .large, lines: 1)
+            SkeletonText(width: 200.0, height: .medium, lines: 1)
             HStack {
-                SkeletonText(width: 200.0, height: .display, lines: 1)
+                SkeletonText(
+                    width: 150.0,
+                    height: .medium,
+                    lines: 1
+                )
                 Spacer()
-                SkeletonBox(width: 36.0, height: 36.0, shapeType: .circle)
+                SkeletonBox(
+                    width: 36.0,
+                    height: 36.0,
+                    shapeType: .circle
+                )
             }
             Spacer()
         }
