@@ -54,8 +54,6 @@ fun HomeScreen() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .statusBarsPadding()
-                .padding(all = Dimens.medium.dp),
         ) {
             // pullRefresh needs a vertical scroll component to work
             LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -71,21 +69,27 @@ fun HomeScreen() {
                             )
                         }
 
-                        HomeHeaderView(
-                            uiModel = HomeHeaderUiModel(
-                                imageUrl = "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
-                                dateText = "Monday, June 15",
-                                todayText = "Today",
-                            )
+                        Box(
+                            modifier = Modifier
+                                .statusBarsPadding()
+                                .padding(Dimens.medium.dp),
                         ) {
-                            // TODO: Tap profile image
-                            println("Tap profile image")
-                        }
+                            HomeHeaderView(
+                                uiModel = HomeHeaderUiModel(
+                                    imageUrl = "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
+                                    dateText = "Monday, June 15",
+                                    todayText = "Today",
+                                ),
+                            ) {
+                                // TODO: Tap profile image
+                                println("Tap profile image")
+                            }
 
-                        HomeFooterView(
-                            pagerState = pagerState,
-                            surveys = uiModel.surveys,
-                        )
+                            HomeFooterView(
+                                pagerState = pagerState,
+                                surveys = uiModel.surveys,
+                            )
+                        }
                     }
                 }
             }
