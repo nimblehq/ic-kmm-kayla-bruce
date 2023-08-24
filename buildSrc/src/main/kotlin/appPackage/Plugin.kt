@@ -10,4 +10,5 @@ object Plugin {
     const val MULTIPLATFORM = "multiplatform"
     const val COCOAPODS = "native.cocoapods"
     const val BUILD_KONFIG = "com.codingfeline.buildkonfig"
+    const val GOOGLE_SERVICES = "com.google.gms.google-services"
 }

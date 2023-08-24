@@ -45,9 +45,13 @@ captures
 .cxx
 local.properties
 xcuserdata
+buildSrc/src/main/kotlin/appPackage/BuildKonfig.kt
 
 # iOS
 *.generated.swift
 .secrets
 ios/fastlane/report.xml
 ios/fastlane/test_output
+
+# Android
+signing.properties

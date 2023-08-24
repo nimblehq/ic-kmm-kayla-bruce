@@ -14,4 +14,6 @@ object Version {
     const val COMPOSE_MATERIAL = "1.4.3"
     const val COMPOSE_NAVIGATION = "2.6.0"
     const val COMPOSE_COIL = "2.4.0"
+    const val GOOGLE_SERVICES = "4.3.15"
+    const val FIREBASE = "31.5.0"
 }

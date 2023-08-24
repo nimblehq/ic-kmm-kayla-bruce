@@ -1,8 +1,11 @@
 plugins {
     id(Plugin.ANDROID_APPLICATION)
     id(Plugin.KOVER)
+    id(Plugin.GOOGLE_SERVICES)
     kotlin(Plugin.ANDROID)
 }
+
+val keystoreProperties = rootDir.loadGradleProperties("signing.properties")
 
 android {
     namespace = "co.nimblehq.kaylabruce.kmmic.android"
@@ -25,10 +28,36 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
+    signingConfigs {
+        create(Configuration.BuildTypes.RELEASE) {
+            storeFile = file("../config/release.keystore")
+            storePassword = keystoreProperties.getProperty("KEYSTORE_PASSWORD")
+            keyPassword = keystoreProperties.getProperty("KEY_PASSWORD")
+            keyAlias = keystoreProperties.getProperty("KEY_ALIAS")
         }
+    }
+    buildTypes {
+        getByName(Configuration.BuildTypes.RELEASE) {
+            isMinifyEnabled = true
+            isDebuggable = false
+            isShrinkResources = true
+            signingConfig = signingConfigs[Configuration.BuildTypes.RELEASE]
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+
+        getByName(Configuration.BuildTypes.DEBUG) {
+            // For quickly testing build with proguard, enable this
+            isMinifyEnabled = false
+            signingConfig = signingConfigs[Configuration.BuildTypes.DEBUG]
+        }
+    }
+    flavorDimensions += Configuration.Flavor.DIMENSION_VERSION
+    productFlavors {
+        create(Configuration.Flavor.STAGING) {
+            applicationIdSuffix = ".${Configuration.Flavor.STAGING}"
+        }
+
+        create(Configuration.Flavor.PRODUCTION) {}
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -68,4 +97,5 @@ dependencies {
     implementation(Dependency.Compose.MATERIAL)
     implementation(Dependency.Compose.NAVIGATION)
     implementation(Dependency.Compose.COIL)
+    implementation(Dependency.Firebase.FIREBASE)
 }
