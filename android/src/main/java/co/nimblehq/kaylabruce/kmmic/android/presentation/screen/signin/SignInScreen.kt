@@ -18,6 +18,7 @@ import androidx.compose.ui.text.input.*
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.nimblehq.kaylabruce.kmmic.android.R
+import co.nimblehq.kaylabruce.kmmic.android.constants.Colors
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.SurveyButton
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.SurveyTextField
 import kotlinx.coroutines.delay
@@ -102,7 +103,7 @@ fun SignInForm() {
             trailingIcon = {
                 Text(
                     text = "Forgot?",
-                    color = Color.White.copy(alpha = 0.5f),
+                    color = Colors.White50,
                     modifier = Modifier
                         .padding(all = 16.dp),
                 )

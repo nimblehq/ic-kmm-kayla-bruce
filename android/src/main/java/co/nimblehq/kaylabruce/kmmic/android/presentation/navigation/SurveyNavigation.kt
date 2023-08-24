@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.*
 import androidx.navigation.compose.*
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.HomeScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.signin.SignInScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.splash.SplashScreen
 
@@ -29,6 +30,10 @@ fun SurveyNavHost(
 
         composable(SurveyDestination.SignIn) {
             SignInScreen()
+        }
+
+        composable(SurveyDestination.SurveyList) {
+            HomeScreen()
         }
     }
 }
