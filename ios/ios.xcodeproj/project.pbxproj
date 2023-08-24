@@ -31,6 +31,8 @@
 		2291AEE92A84A01200F262EA /* Image+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291AEE82A84A01200F262EA /* Image+Url.swift */; };
 		2291AEEB2A84BA9B00F262EA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2291AEEA2A84BA9B00F262EA /* String.swift */; };
 		22A41E992A85F2D200C3265C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A41E982A85F2D200C3265C /* Font.swift */; };
+		22AF67842A975B91001D81FA /* SurveyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF67832A975B91001D81FA /* SurveyDetailView.swift */; };
+		22AF67862A975C3D001D81FA /* SurveyDetailUiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF67852A975C3D001D81FA /* SurveyDetailUiModel.swift */; };
 		22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4B5C92A861D0F00041D92 /* Dimens.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		BBA1F9E8E9972A7A483AB606 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AF58C075473DD0EA8E52E /* Pods_ios.framework */; };
@@ -76,6 +78,8 @@
 		2291AEE82A84A01200F262EA /* Image+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Url.swift"; sourceTree = "<group>"; };
 		2291AEEA2A84BA9B00F262EA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		22A41E982A85F2D200C3265C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		22AF67832A975B91001D81FA /* SurveyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailView.swift; sourceTree = "<group>"; };
+		22AF67852A975C3D001D81FA /* SurveyDetailUiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailUiModel.swift; sourceTree = "<group>"; };
 		22B4B5C92A861D0F00041D92 /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		22B4B5D12A8A246A00041D92 /* DebugStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugStaging.xcconfig; sourceTree = "<group>"; };
 		22B4B5D22A8A247A00041D92 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
@@ -331,6 +335,8 @@
 				2291AEDA2A849AB700F262EA /* Content */,
 				2291AEDE2A849AF800F262EA /* Home */,
 				2291AEDB2A849AE000F262EA /* Splash */,
+				22AF67812A975B65001D81FA /* SurveyDetail */,
+				22AF67822A975B7A001D81FA /* SurveyQuestion */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				2291AEE52A849D0B00F262EA /* HomeHeaderUiModel.swift */,
+				22AF67852A975C3D001D81FA /* SurveyDetailUiModel.swift */,
 			);
 			path = UiModels;
 			sourceTree = "<group>";
@@ -386,6 +393,21 @@
 				2291AEEA2A84BA9B00F262EA /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		22AF67812A975B65001D81FA /* SurveyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				22AF67832A975B91001D81FA /* SurveyDetailView.swift */,
+			);
+			path = SurveyDetail;
+			sourceTree = "<group>";
+		};
+		22AF67822A975B7A001D81FA /* SurveyQuestion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SurveyQuestion;
 			sourceTree = "<group>";
 		};
 		3DC08A35A698F95DD7C99B65 /* Frameworks */ = {
@@ -643,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				224AA4272A93B35200800A61 /* R+SwiftUI.swift in Sources */,
+				22AF67842A975B91001D81FA /* SurveyDetailView.swift in Sources */,
 				22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */,
 				2291AEE32A849C6200F262EA /* HomeHeaderView.swift in Sources */,
 				227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */,
@@ -655,6 +678,7 @@
 				224AA41A2A8E2B8700800A61 /* R+Localization.swift in Sources */,
 				224AA4252A93B2B400800A61 /* R+Assets.swift in Sources */,
 				2291AEE62A849D0B00F262EA /* HomeHeaderUiModel.swift in Sources */,
+				22AF67862A975C3D001D81FA /* SurveyDetailUiModel.swift in Sources */,
 				224AA4222A93B0FC00800A61 /* PageControl.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				2291AEE92A84A01200F262EA /* Image+Url.swift in Sources */,

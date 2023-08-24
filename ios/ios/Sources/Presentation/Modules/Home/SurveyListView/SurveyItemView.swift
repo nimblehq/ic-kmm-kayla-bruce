@@ -50,7 +50,7 @@ struct SurveyItemView: View {
                                 print("Survey details")
                             },
                             label: {
-                                assets.detailButton.image
+                                assets.icDetaibutton.image
                                     .resizable()
                                     .frame(width: 56.0, height: 56.0)
                             }
