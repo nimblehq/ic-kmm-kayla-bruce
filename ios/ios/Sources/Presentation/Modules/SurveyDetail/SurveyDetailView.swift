@@ -80,7 +80,7 @@ struct SurveyDetailView: View {
                 print("Question 1")
             },
             label: {
-                Text(localized.surveyDetailBottomStart)
+                Text(localized.surveyDetailPrimaryButtonTitle)
                     .frame(alignment: .center)
                     .font(.boldXmedium)
                     .padding(.horizontal, Dimens.medium)
