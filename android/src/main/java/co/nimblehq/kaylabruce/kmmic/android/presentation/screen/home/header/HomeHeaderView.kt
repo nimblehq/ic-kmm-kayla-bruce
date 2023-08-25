@@ -40,7 +40,7 @@ fun HomeHeaderView(
         ) {
             Text(
                 text = uiModel.todayText,
-                style = MaterialTheme.typography.caption,
+                style = MaterialTheme.typography.h3,
                 color = Color.White,
             )
             AsyncImage(
