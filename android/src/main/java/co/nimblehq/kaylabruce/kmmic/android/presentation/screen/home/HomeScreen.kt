@@ -21,7 +21,7 @@ import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyListUiMod
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
 
 // TODO: Remove dummy data
-private val DUMMY_DATA = SurveyListUiModel(
+private val _dummyData = SurveyListUiModel(
     surveys = listOf(
         SurveyUiModel(
             url = "https://picsum.photos/375/812",
@@ -41,7 +41,7 @@ private val DUMMY_DATA = SurveyListUiModel(
     )
 )
 
-private val HEADER_DATA = HomeHeaderUiModel(
+private val _headerData = HomeHeaderUiModel(
     imageUrl = "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
     dateText = "Monday, June 15",
     todayText = "Today",
@@ -54,7 +54,7 @@ fun HomeScreen() {
         backgroundColor = Color.Black,
     ) { padding ->
         val pagerState = rememberPagerState()
-        val uiModel = DUMMY_DATA
+        val uiModel = _dummyData
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -72,7 +72,7 @@ fun HomeScreen() {
                                 .statusBarsPadding()
                                 .padding(Dimens.medium.dp),
                         ) {
-                            HomeHeader(uiModel = HEADER_DATA)
+                            HomeHeader(uiModel = _headerData)
                             HomeFooter(
                                 uiModel = uiModel.surveys,
                                 pagerState = pagerState,
