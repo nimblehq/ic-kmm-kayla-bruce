@@ -9,7 +9,7 @@ const val ACCESS_TOKEN = "access_token"
 const val REFRESH_TOKEN = "refresh_token"
 const val EXPIRES_IN = "expires_in"
 
-interface LocalService {
+interface LocalStorageService {
 
     val tokenType: String?
 
@@ -22,7 +22,7 @@ interface LocalService {
     fun clear()
 }
 
-class LocalSettingsServiceImpl(private val settings: Settings) : LocalService {
+class LocalStorageServiceImpl(private val settings: Settings) : LocalStorageService {
 
     override val tokenType: String?
         get() = settings.getStringOrNull(TOKEN_TYPE)

@@ -2,7 +2,7 @@ package co.nimblehq.kaylabruce.kmmic.data.remote.service
 
 import co.nimblehq.jsonapi.json.JsonApi
 import co.nimblehq.kaylabruce.kmmic.BuildKonfig
-import co.nimblehq.kaylabruce.kmmic.data.local.LocalService
+import co.nimblehq.kaylabruce.kmmic.data.local.LocalStorageService
 import co.nimblehq.kaylabruce.kmmic.domain.usecase.RefreshTokenUseCase
 import io.github.aakira.napier.*
 import io.github.aakira.napier.LogLevel
@@ -22,7 +22,7 @@ import kotlinx.serialization.json.Json
 
 class ApiClient(
     engine: HttpClientEngine,
-    localDataSource: LocalService? = null,
+    localDataSource: LocalStorageService? = null,
     refreshTokenUseCase: RefreshTokenUseCase? = null
 ) {
 
