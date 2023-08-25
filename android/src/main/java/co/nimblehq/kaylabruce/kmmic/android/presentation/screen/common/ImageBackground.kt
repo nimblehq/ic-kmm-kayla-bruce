@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 
 private const val GRADIENT_VAL = 0.2f
+
 @Composable
 fun ImageBackground(
     @DrawableRes imageRes: Int? = null,
