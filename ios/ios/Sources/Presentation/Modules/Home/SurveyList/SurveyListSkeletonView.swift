@@ -24,12 +24,12 @@ struct SurveyListSkeletonView: View {
                     lines: 1
                 )
                 SkeletonText(
-                    width: geometry.size.width - 100.0,
+                    width: geometry.size.width * 0.6,
                     height: .medium,
                     lines: 2
                 )
                 SkeletonText(
-                    width: geometry.size.width - 50,
+                    width: geometry.size.width * 0.8,
                     height: .medium,
                     lines: 2
                 )
