@@ -22,7 +22,7 @@ interface LocalService {
     fun clear()
 }
 
-class LocalServiceImpl(private val settings: Settings) : LocalService {
+class LocalSettingsServiceImpl(private val settings: Settings) : LocalService {
 
     override val tokenType: String?
         get() = settings.getStringOrNull(TOKEN_TYPE)
