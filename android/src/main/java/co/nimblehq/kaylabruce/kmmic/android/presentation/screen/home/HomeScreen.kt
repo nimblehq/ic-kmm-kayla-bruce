@@ -9,6 +9,9 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -105,7 +108,10 @@ private fun BackgroundImage(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun HomeHeader(uiModel: HomeHeaderUiModel) {
-    HomeHeaderView(uiModel = uiModel) {
+    HomeHeaderView(
+        uiModel = uiModel,
+        isLoading = true,
+        ) {
         // TODO: Tap profile image
         println("Tap profile image")
     }
@@ -120,6 +126,7 @@ private fun HomeFooter(
     HomeFooterView(
         pagerState = pagerState,
         surveys = uiModel,
+        isLoading = true,
     )
 }
 
