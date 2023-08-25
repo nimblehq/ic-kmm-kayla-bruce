@@ -11,4 +11,6 @@ sealed class SurveyDestination(val route: String = "") {
     object SignIn : SurveyDestination("sign-in")
 
     object SurveyList : SurveyDestination("survey-list")
+
+    object SurveyDetail : SurveyDestination("survey-detail")
 }
