@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.*
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -89,19 +90,19 @@ fun SignInForm() {
         SurveyTextField(
             text = email,
             onTextChange = { email = it },
-            placeholder = "Email",
+            placeholder = stringResource(id = R.string.login_email),
             keyboardType = KeyboardType.Email,
             imeAction = ImeAction.Next,
         )
         SurveyTextField(
             text = password,
             onTextChange = { password = it },
-            placeholder = "Password",
+            placeholder = stringResource(id = R.string.login_password),
             visualTransformation = PasswordVisualTransformation(),
             imeAction = ImeAction.Done,
             trailingIcon = {
                 Text(
-                    text = "Forgot?",
+                    text = stringResource(id = R.string.login_forgot),
                     color = Colors.White50,
                     modifier = Modifier
                         .padding(all = 16.dp),
@@ -111,7 +112,7 @@ fun SignInForm() {
         SurveyButton(
             modifier = Modifier
                 .fillMaxWidth(),
-            text = "Login",
+            text = stringResource(id = R.string.login),
             onClick = {},
         )
     }
