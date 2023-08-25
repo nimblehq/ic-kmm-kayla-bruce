@@ -16,6 +16,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.*
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import co.nimblehq.kaylabruce.kmmic.android.constants.Colors
 
 @Composable
 fun SurveyTextField(
@@ -44,12 +45,12 @@ fun SurveyTextField(
         colors = TextFieldDefaults.textFieldColors(
             textColor = Color.White,
             cursorColor = Color.White,
-            backgroundColor = Color.White.copy(alpha = 0.2f),
+            backgroundColor = Colors.White20,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = Color.Transparent,
-            placeholderColor = Color.White.copy(alpha = 0.3f),
+            placeholderColor = Colors.White30,
         ),
         visualTransformation = visualTransformation,
         keyboardOptions = KeyboardOptions(

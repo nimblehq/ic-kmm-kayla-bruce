@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -27,6 +28,7 @@ fun HomeHeaderView(
     Column {
        Text(
            text = uiModel.dateText.uppercase(),
+           style = MaterialTheme.typography.h5,
            color = Color.White,
            )
         Spacer(
@@ -38,6 +40,7 @@ fun HomeHeaderView(
         ) {
             Text(
                 text = uiModel.todayText,
+                style = MaterialTheme.typography.h3,
                 color = Color.White,
             )
             AsyncImage(
