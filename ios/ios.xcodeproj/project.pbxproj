@@ -33,6 +33,8 @@
 		22A41E992A85F2D200C3265C /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A41E982A85F2D200C3265C /* Font.swift */; };
 		22AF67842A975B91001D81FA /* SurveyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF67832A975B91001D81FA /* SurveyDetailView.swift */; };
 		22AF67862A975C3D001D81FA /* SurveyDetailUiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF67852A975C3D001D81FA /* SurveyDetailUiModel.swift */; };
+		22AF678A2A977197001D81FA /* SurveyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF67892A977197001D81FA /* SurveyQuestionView.swift */; };
+		22AF678C2A9771CA001D81FA /* SurveyQuestionUiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF678B2A9771CA001D81FA /* SurveyQuestionUiModel.swift */; };
 		22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4B5C92A861D0F00041D92 /* Dimens.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		BBA1F9E8E9972A7A483AB606 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AF58C075473DD0EA8E52E /* Pods_ios.framework */; };
@@ -80,6 +82,8 @@
 		22A41E982A85F2D200C3265C /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		22AF67832A975B91001D81FA /* SurveyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailView.swift; sourceTree = "<group>"; };
 		22AF67852A975C3D001D81FA /* SurveyDetailUiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyDetailUiModel.swift; sourceTree = "<group>"; };
+		22AF67892A977197001D81FA /* SurveyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionView.swift; sourceTree = "<group>"; };
+		22AF678B2A9771CA001D81FA /* SurveyQuestionUiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyQuestionUiModel.swift; sourceTree = "<group>"; };
 		22B4B5C92A861D0F00041D92 /* Dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimens.swift; sourceTree = "<group>"; };
 		22B4B5D12A8A246A00041D92 /* DebugStaging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugStaging.xcconfig; sourceTree = "<group>"; };
 		22B4B5D22A8A247A00041D92 /* DebugProduction.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DebugProduction.xcconfig; sourceTree = "<group>"; };
@@ -380,6 +384,7 @@
 			children = (
 				2291AEE52A849D0B00F262EA /* HomeHeaderUiModel.swift */,
 				22AF67852A975C3D001D81FA /* SurveyDetailUiModel.swift */,
+				22AF678B2A9771CA001D81FA /* SurveyQuestionUiModel.swift */,
 			);
 			path = UiModels;
 			sourceTree = "<group>";
@@ -406,6 +411,7 @@
 		22AF67822A975B7A001D81FA /* SurveyQuestion */ = {
 			isa = PBXGroup;
 			children = (
+				22AF67892A977197001D81FA /* SurveyQuestionView.swift */,
 			);
 			path = SurveyQuestion;
 			sourceTree = "<group>";
@@ -666,6 +672,8 @@
 			files = (
 				224AA4272A93B35200800A61 /* R+SwiftUI.swift in Sources */,
 				22AF67842A975B91001D81FA /* SurveyDetailView.swift in Sources */,
+				22AF678C2A9771CA001D81FA /* SurveyQuestionUiModel.swift in Sources */,
+				22AF678A2A977197001D81FA /* SurveyQuestionView.swift in Sources */,
 				22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */,
 				2291AEE32A849C6200F262EA /* HomeHeaderView.swift in Sources */,
 				227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */,
