@@ -16,7 +16,7 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            Image("BackgroundSplash")
+            Image("bg-splash")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
 

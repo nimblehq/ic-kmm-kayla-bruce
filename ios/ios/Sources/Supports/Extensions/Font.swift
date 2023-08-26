@@ -54,6 +54,7 @@ extension Font {
 
     // Medium fonts
     static var regularXmedium: Font { font(weight: .regular, size: .xmedium) }
+    static var boldXmedium: Font { font(weight: .bold, size: .xmedium) }
 
     // Title fonts
     static var boldTitle: Font { font(weight: .bold, size: .title) }
