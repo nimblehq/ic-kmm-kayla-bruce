@@ -4,7 +4,7 @@ object Version {
     const val ANDROID_COMPILE_SDK = 33
     const val ANDROID_DEFAULT_MIN_SDK = 24
     const val ANDROID_VERSION_CODE = 1
-    const val ANDROID_VERSION_NAME = "0.3.0"
+    const val ANDROID_VERSION_NAME = "0.4.0"
 
     const val DETEKT = "1.21.0"
     const val KOVER = "0.6.1"
