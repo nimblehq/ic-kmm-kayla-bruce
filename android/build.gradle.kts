@@ -14,8 +14,8 @@ android {
         applicationId = "co.nimblehq.kaylabruce.kmmic.android"
         minSdk = Version.ANDROID_MIN_SDK
         targetSdk = Version.ANDROID_TARGET_SDK
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = Version.ANDROID_VERSION_CODE
+        versionName = Version.ANDROID_VERSION_NAME
     }
     buildFeatures {
         compose = true
