@@ -1,15 +1,10 @@
-package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.surveydetail
+package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.surveyquestion
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -22,22 +17,25 @@ import co.nimblehq.kaylabruce.kmmic.android.R
 import co.nimblehq.kaylabruce.kmmic.android.constants.Colors
 import co.nimblehq.kaylabruce.kmmic.android.constants.Dimens
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.ImageBackground
-import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyDetailUiModel
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.NextCircleButton
+import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyQuestionUiModel
 
 // TODO: - Remove dummy data
-private val _dummyData = SurveyDetailUiModel(
+private val _dummyData = SurveyQuestionUiModel(
     imageUrl = "https://picsum.photos/375/813",
-    titleText = "Working from home Check-In",
-    descriptionText = "We would like to know how you feel about our work from home (WFH) experience.",
+    questionNumber = 3,
+    totalQuestion = 10,
+    questionTitle = "How fulfilled did you feel during this WFH period?",
+    isLastQuestion = true,
 )
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun SurveyDetailScreen() {
+fun SurveyQuestionScreen() {
+    val uiModel = _dummyData
     Scaffold(
         backgroundColor = Color.Black,
     ) { padding ->
-        val uiModel = _dummyData
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -55,19 +53,24 @@ fun SurveyDetailScreen() {
                             Column(
                                 verticalArrangement = Arrangement.SpaceBetween,
                                 modifier = Modifier.fillMaxSize(),
-                                ) {
+                            ) {
                                 Column {
-                                    BackButton()
+                                    Row(
+                                        horizontalArrangement = Arrangement.End,
+                                        modifier = Modifier.fillMaxWidth(),
+                                    )  {
+                                        CloseButton()
+                                    }
                                     Spacer(modifier = Modifier.height(Dimens.medium.dp))
-                                    TitleText(text = uiModel.titleText)
+                                    QuestionNumberText(text = uiModel.questionIndex)
                                     Spacer(modifier = Modifier.height(Dimens.small.dp))
-                                    DescriptionText(text = uiModel.descriptionText)
+                                    QuestionTittleText(text = uiModel.questionTitle)
                                 }
                                 Row(
                                     horizontalArrangement = Arrangement.End,
                                     modifier = Modifier.fillMaxWidth(),
                                 )  {
-                                    StartButton()
+                                    PrimaryButton(isLastQuestion = uiModel.isLastQuestion)
                                 }
                             }
                         }
@@ -88,33 +91,22 @@ private fun BackgroundImage(imageUrl: String) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun BackButton() {
+private fun CloseButton() {
     Image(
-        painter = painterResource(id = R.drawable.ic_back),
+        painter = painterResource(id = R.drawable.ic_close),
         contentDescription = null,
         contentScale = ContentScale.Inside,
         modifier = Modifier
             .size(30.dp)
             .clickable {
-                // TODO: - Navigate back
+                // TODO: - Close question
             },
     )
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun TitleText(text: String) {
-    Text(
-        text = text,
-        color = Color.White,
-        style = MaterialTheme.typography.h4,
-        overflow = TextOverflow.Ellipsis,
-    )
-}
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-private fun DescriptionText(text: String) {
+private fun QuestionNumberText(text: String) {
     Text(
         text = text,
         color = Colors.White70,
@@ -126,16 +118,42 @@ private fun DescriptionText(text: String) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun StartButton() {
+private fun QuestionTittleText(text: String) {
+    Text(
+        text = text,
+        color = Color.White,
+        style = MaterialTheme.typography.h4,
+        overflow = TextOverflow.Ellipsis,
+    )
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun PrimaryButton(isLastQuestion: Boolean) {
+    if (isLastQuestion) SubmitButton() else NextButton()
+}
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun NextButton() {
+    NextCircleButton(
+        onClick = {
+                  // Todo: - Navigate to the next question
+        },
+        )
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun SubmitButton() {
     Button(
         contentPadding = PaddingValues(Dimens.medium.dp),
         onClick = {
-        // TODO: - Navigate to question screen
+            // TODO: - Submit answers and show lottie
         },
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
-        ) {
+    ) {
         Text(
-            text = "Start Survey",
+            text = "Submit",
             color = Color.Black,
             style = MaterialTheme.typography.body1,
             maxLines = 2,
@@ -146,6 +164,6 @@ private fun StartButton() {
 
 @Preview
 @Composable
-fun PreviewSurveyDetailScreen() {
-    SurveyDetailScreen()
+private fun PreviewSurveyQuestionScreen() {
+    SurveyQuestionScreen()
 }
