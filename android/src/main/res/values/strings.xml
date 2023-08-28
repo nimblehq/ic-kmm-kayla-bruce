@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KMMIC Survey</string>
+
+    <string name="login">Login</string>
+    <string name="login_email">Email</string>
+    <string name="login_forgot">Forgot?</string>
+    <string name="login_password">Password</string>
+</resources>

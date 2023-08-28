@@ -6,4 +6,7 @@ object BuildKonfig {
     const val CLIENT_ID_STAGING = ""
     const val CLIENT_SECRET_STAGING = ""
     const val BASE_URL_STAGING = ""
+
+    const val GITHUB_USER = ""
+    const val GITHUB_TOKEN = ""
 }

@@ -9,6 +9,7 @@ buildscript {
         classpath(Dependency.Kotlin.KOTLIN_GRADLE_PLUGIN)
         classpath(Dependency.Kotlin.KOTLIN_SERIALIZATION)
         classpath(Dependency.BuildKonfig.BUILD_KONFIG)
+        classpath(Dependency.Google.GOOGLE_SERVICES)
         classpath(Dependency.Kover.KOVER)
     }
 }
@@ -24,6 +25,15 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        maven {
+            name = "Github Packages"
+            url = uri("https://maven.pkg.github.com/nimblehq/jsonapi-kotlin")
+            credentials {
+                username = BuildKonfig.GITHUB_USER
+                password = BuildKonfig.GITHUB_TOKEN
+            }
+        }
     }
 }
 

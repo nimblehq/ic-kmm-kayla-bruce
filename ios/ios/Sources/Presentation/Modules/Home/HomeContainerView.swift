@@ -12,6 +12,9 @@ struct HomeContainerView: View {
 
     var body: some View {
         ZStack {
+            SurveyListView()
+                .edgesIgnoringSafeArea(.all)
+
             VStack {
                 let homeHeaderUiModel = HomeHeaderUiModel(
                     imageUrl: "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
@@ -30,4 +33,5 @@ struct HomeContainerView: View {
 
 #Preview {
     HomeContainerView()
+        .preferredColorScheme(.dark)
 }

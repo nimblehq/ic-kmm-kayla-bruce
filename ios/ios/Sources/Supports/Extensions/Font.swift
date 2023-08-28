@@ -23,6 +23,8 @@ enum FontSize {
     case small
     /// 15.0
     case medium
+    /// 17.0
+    case xmedium
     /// 20.0
     case body
     /// 28.0
@@ -35,6 +37,7 @@ enum FontSize {
         case .tiny: return 11.0
         case .small: return 13.0
         case .medium: return 15.0
+        case .xmedium: return 17.0
         case .body: return 20.0
         case .title: return 28.0
         case .display: return 34.0
@@ -50,8 +53,11 @@ extension Font {
     static var boldSmall: Font { font(weight: .bold, size: .small) }
 
     // Medium fonts
+    static var regularXmedium: Font { font(weight: .regular, size: .xmedium) }
+    static var boldXmedium: Font { font(weight: .bold, size: .xmedium) }
 
     // Title fonts
+    static var boldTitle: Font { font(weight: .bold, size: .title) }
 
     // Display fonts
     static var boldDisplay: Font { font(weight: .bold, size: .display) }
