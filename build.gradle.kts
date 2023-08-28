@@ -25,6 +25,15 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        maven {
+            name = "Github Packages"
+            url = uri("https://maven.pkg.github.com/nimblehq/jsonapi-kotlin")
+            credentials {
+                username = BuildKonfig.GITHUB_USER
+                password = BuildKonfig.GITHUB_TOKEN
+            }
+        }
     }
 }
 

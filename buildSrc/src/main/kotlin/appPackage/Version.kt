@@ -18,4 +18,13 @@ object Version {
     const val GOOGLE_ACCOMPANIST = "0.28.0"
     const val FIREBASE = "31.5.0"
     const val COMPOSE_FOUNDATION = "1.4.3"
+    const val COROUTINES = "1.7.3"
+    const val KOIN = "3.4.3"
+    const val KOIN_ANDROID = "3.4.3"
+    const val NAPIER = "2.6.1"
+    const val JSON_API = "0.1.0"
+    const val KTOR = "2.3.3"
+    const val SETTINGS = "1.0.0"
+    const val TIMBER = "5.0.1"
+    const val PREFERENCE = "1.2.0"
 }
