@@ -40,9 +40,15 @@ struct AppCoordinator: View {
                     questionNumber: question,
                     totalQuestion: 10,
                     questionTile: "How fulfilled did you feel during this WFH period?",
-                    isLastQuestion: false
+                    isLastQuestion: false,
+                    isShowQuitPrompt: false
                 )
-                SurveyQuestionView(id: id, question: question, uiModel: uiModel)
+                SurveyQuestionView(
+                    id: id,
+                    question: question,
+                    uiModel: uiModel,
+                    dataSource: .init(coordinator: coordinator)
+                )
             }
         }
     }

@@ -49,7 +49,7 @@ extension RouteCoordinator: HomeCoordinator {
     }
 }
 
-extension RouteCoordinator: SurveyDetailCoordinator {
+extension RouteCoordinator: SurveyDetailCoordinator, SurveyQuestionCoordinator {
 
     func showSurveyQuestionScreen(id: String, question: Int) {
         routes.presentCover(

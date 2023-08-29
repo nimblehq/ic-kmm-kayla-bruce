@@ -1,3 +1,7 @@
+"cancel" = "Huỷ";
 "home.header.today" = "Hôm nay";
 "surveyDetail.primaryButton.title" = "Bắt đầu khảo sát";
 "question.submitButton.title" = "Gửi khảo sát";
+"question.quit.title" = "Lưu ý!";
+"question.quit.description" = "Bạn có muốn đóng khảo sát hiện tại?";
+"yes" = "Đồng ý";

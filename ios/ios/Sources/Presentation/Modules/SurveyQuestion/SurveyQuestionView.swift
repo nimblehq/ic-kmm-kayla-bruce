@@ -12,7 +12,9 @@ struct SurveyQuestionView: View {
 
     let id: String
     let question: Int
-    var uiModel: SurveyQuestionUiModel
+    @State var uiModel: SurveyQuestionUiModel
+
+    @StateObject var dataSource: DataSource
 
     var body: some View {
         ZStack {
@@ -41,6 +43,9 @@ struct SurveyQuestionView: View {
                 ))
             }
         }
+        .alert(isPresented: $uiModel.isShowQuitPrompt) {
+            quitAlert
+        }
     }
 
     private var backgroundImage: some View {
@@ -58,8 +63,7 @@ struct SurveyQuestionView: View {
             Spacer()
             Button(
                 action: {
-                    // TODO: Open pop up
-                    print("Close")
+                    uiModel.isShowQuitPrompt = true
                 },
                 label: {
                     assets.icClosebutton.image
@@ -116,6 +120,32 @@ struct SurveyQuestionView: View {
         .cornerRadius(10.0)
         .padding([.vertical], Dimens.medium)
     }
+
+    private var quitAlert: Alert {
+        let yesText = Text(localized.yes)
+        let cancelText = Text(localized.cancel)
+            .bold()
+        return Alert(
+            title: Text(localized.questionQuitTitle),
+            message: Text(localized.questionQuitDescription),
+            primaryButton: .default(
+                yesText,
+                action: {
+                    closeSurvey()
+                }
+            ),
+            secondaryButton: .cancel(
+                cancelText,
+                action: {
+                    uiModel.isShowQuitPrompt = false
+                }
+            )
+        )
+    }
+
+    private func closeSurvey() {
+        dataSource.backToHomeScreen()
+    }
 }
 
 #Preview {
@@ -124,12 +154,14 @@ struct SurveyQuestionView: View {
         questionNumber: 3,
         totalQuestion: 10,
         questionTile: "How fulfilled did you feel during this WFH period?",
-        isLastQuestion: false
+        isLastQuestion: false,
+        isShowQuitPrompt: false
     )
     return SurveyQuestionView(
         id: .empty,
         question: 1,
-        uiModel: uiModel
+        uiModel: uiModel,
+        dataSource: .init(coordinator: RouteCoordinator())
     )
     .preferredColorScheme(.dark)
 }
