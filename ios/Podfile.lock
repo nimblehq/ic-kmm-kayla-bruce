@@ -28,6 +28,7 @@ PODS:
     - GoogleUtilities/Environment (~> 7.10)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesSwift (~> 2.1)
+  - FlowStacks (0.3.4)
   - GoogleDataTransport (9.2.5):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
@@ -57,6 +58,7 @@ PODS:
 
 DEPENDENCIES:
   - FirebaseCrashlytics
+  - FlowStacks
   - Kingfisher
   - lottie-ios
   - R.swift
@@ -73,6 +75,7 @@ SPEC REPOS:
     - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseSessions
+    - FlowStacks
     - GoogleDataTransport
     - GoogleUtilities
     - Kingfisher
@@ -96,6 +99,7 @@ SPEC CHECKSUMS:
   FirebaseCrashlytics: 4679fbc4768fcb4dd6f5533101841d40256d4475
   FirebaseInstallations: b28af1b9f997f1a799efe818c94695a3728c352f
   FirebaseSessions: 991fb4c20b3505eef125f7cbfa20a5b5b189c2a4
+  FlowStacks: dc991efde20b6c3b28c5631294e2369c1f57275c
   GoogleDataTransport: 54dee9d48d14580407f8f5fbf2f496e92437a2f2
   GoogleUtilities: 13e2c67ede716b8741c7989e26893d151b2b2084
   Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
@@ -109,6 +113,6 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 1cc5cd61ba9bacb2194e340aeb47a2a37fda00b3
 
-PODFILE CHECKSUM: 5d2f2e9f508f346bf4d94c89c53d6234cf1f6a5c
+PODFILE CHECKSUM: 0ac997fd12ce3c24e80e330fc433254a5ee0864e
 
 COCOAPODS: 1.12.1

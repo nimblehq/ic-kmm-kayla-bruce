@@ -15,5 +15,6 @@ target 'ios' do
   pod 'SwiftLint'
   pod 'R.swift'
   pod 'FirebaseCrashlytics'
+  pod 'FlowStacks'
 
 end

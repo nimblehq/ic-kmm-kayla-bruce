@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct SurveyItemView: View {
+
     @State private var currentPage: Int = 0
+    let onTap: (Int) -> Void
 
     var body: some View {
         ZStack {
@@ -47,7 +49,7 @@ struct SurveyItemView: View {
                         Button(
                             action: {
                                 // TODO: Navigate to the detail screen
-                                print("Survey details")
+                                onTap(currentPage)
                             },
                             label: {
                                 assets.icDetaibutton.image
@@ -65,6 +67,6 @@ struct SurveyItemView: View {
 }
 
 #Preview {
-    SurveyItemView()
+    SurveyItemView(onTap: { _ in })
         .preferredColorScheme(.dark)
 }

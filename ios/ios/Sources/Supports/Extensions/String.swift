@@ -10,6 +10,8 @@ import Foundation
 
 extension String {
 
+    static let empty = ""
+
     var asURL: URL {
         URL(string: self) ?? URL(fileURLWithPath: "")
     }

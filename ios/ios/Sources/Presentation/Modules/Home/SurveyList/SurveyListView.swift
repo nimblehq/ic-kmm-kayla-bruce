@@ -10,6 +10,8 @@ import SwiftUI
 
 struct SurveyListView: View {
 
+    let onTap: (Int) -> Void
+
     var body: some View {
         surveyList
     }
@@ -17,10 +19,10 @@ struct SurveyListView: View {
     var surveyList: some View {
         ZStack {
             TabView {
-                SurveyItemView()
-                SurveyItemView()
-                SurveyItemView()
-                SurveyItemView()
+                SurveyItemView(onTap: onTap)
+                SurveyItemView(onTap: onTap)
+                SurveyItemView(onTap: onTap)
+                SurveyItemView(onTap: onTap)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }

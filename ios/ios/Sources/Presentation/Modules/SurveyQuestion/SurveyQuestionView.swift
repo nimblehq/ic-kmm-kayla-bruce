@@ -10,7 +10,9 @@ import SwiftUI
 
 struct SurveyQuestionView: View {
 
-    let uiModel: SurveyQuestionUiModel
+    let id: String
+    let question: Int
+    var uiModel: SurveyQuestionUiModel
 
     var body: some View {
         ZStack {
@@ -29,7 +31,7 @@ struct SurveyQuestionView: View {
                                 submitButton
                             } else {
                                 nextButton
-                            } 
+                            }
                         }
                     }
                 )
@@ -124,7 +126,11 @@ struct SurveyQuestionView: View {
         questionTile: "How fulfilled did you feel during this WFH period?",
         isLastQuestion: false
     )
-    return SurveyQuestionView(uiModel: uiModel)
-        .preferredColorScheme(.dark)
+    return SurveyQuestionView(
+        id: .empty,
+        question: 1,
+        uiModel: uiModel
+    )
+    .preferredColorScheme(.dark)
 }
 
