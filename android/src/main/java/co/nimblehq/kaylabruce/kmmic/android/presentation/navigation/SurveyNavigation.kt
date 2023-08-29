@@ -42,7 +42,10 @@ fun SurveyNavHost(
                 )
         }
 
-        composable(SurveyDestination.SurveyDetail) {
+        composable(
+            route = "${SurveyDestination.SurveyDetail.route}/{$SurveyIdArg}",
+            arguments = SurveyDestination.SurveyDetail.arguments
+        ) {
             SurveyDetailScreen()
         }
     }
