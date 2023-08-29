@@ -27,16 +27,19 @@ import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
 private val _dummyData = SurveyListUiModel(
     surveys = listOf(
         SurveyUiModel(
+            id = "1",
             url = "https://picsum.photos/375/812",
             title = "Working from home Check-In",
             description = "We would like to know how you feel about our work from home",
         ),
         SurveyUiModel(
+            id = "2",
             url = "https://picsum.photos/375/813",
             title = "Career training and development",
             description = "We would like to know what are your goals and skills you wanted",
         ),
         SurveyUiModel(
+            id = "3",
             url = "https://picsum.photos/375/814",
             title = "Inclusion and belonging",
             description = "Building a workplace culture that prioritizes belonging and inclusion",
@@ -52,7 +55,9 @@ private val _headerData = HomeHeaderUiModel(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    onNavigateToSurveyDetail: (String) -> Unit,
+) {
     Scaffold(
         backgroundColor = Color.Black,
     ) { padding ->
@@ -79,6 +84,9 @@ fun HomeScreen() {
                             HomeFooter(
                                 uiModel = uiModel.surveys,
                                 pagerState = pagerState,
+                                onNavigateToSurveyDetail = {
+                                    onNavigateToSurveyDetail.invoke(it)
+                                }
                             )
                         }
                     }
@@ -110,7 +118,7 @@ private fun BackgroundImage(
 private fun HomeHeader(uiModel: HomeHeaderUiModel) {
     HomeHeaderView(
         uiModel = uiModel,
-        isLoading = true,
+        isLoading = false,
         ) {
         // TODO: Tap profile image
         println("Tap profile image")
@@ -122,16 +130,20 @@ private fun HomeHeader(uiModel: HomeHeaderUiModel) {
 private fun HomeFooter(
     pagerState: PagerState,
     uiModel: List<SurveyUiModel>,
+    onNavigateToSurveyDetail: (String) -> Unit,
 ) {
     HomeFooterView(
         pagerState = pagerState,
         surveys = uiModel,
-        isLoading = true,
+        isLoading = false,
+        onNavigate = {
+            onNavigateToSurveyDetail.invoke(it)
+        },
     )
 }
 
 @Preview
 @Composable
 fun PreviewHomeScreen() {
-    HomeScreen()
+    HomeScreen(onNavigateToSurveyDetail = {})
 }

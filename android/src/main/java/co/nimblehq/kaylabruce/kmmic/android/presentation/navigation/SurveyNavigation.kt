@@ -23,7 +23,7 @@ fun SurveyNavHost(
             SplashScreen(
                 onNavigate = {
                     navController.navigate(
-                        route = SurveyDestination.SignIn.route,
+                        route = SurveyDestination.Home.route,
                     )
                 }
             )
@@ -33,8 +33,13 @@ fun SurveyNavHost(
             SignInScreen()
         }
 
-        composable(SurveyDestination.SurveyList) {
-            HomeScreen()
+        composable(SurveyDestination.Home) { entry ->
+            HomeScreen(
+                onNavigateToSurveyDetail = {
+                    navController
+                        .navigate(route = SurveyDestination.SurveyDetail.buildDestination(surveyId = it))
+                },
+                )
         }
 
         composable(SurveyDestination.SurveyDetail) {
@@ -55,4 +60,3 @@ private fun NavGraphBuilder.composable(
         content = content
     )
 }
-

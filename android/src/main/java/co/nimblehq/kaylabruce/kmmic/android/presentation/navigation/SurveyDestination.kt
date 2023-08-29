@@ -1,6 +1,10 @@
 package co.nimblehq.kaylabruce.kmmic.android.presentation.navigation
 
 import androidx.navigation.NamedNavArgument
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+
+const val SurveyIdArg = "surveyId"
 
 sealed class SurveyDestination(val route: String = "") {
 
@@ -10,7 +14,16 @@ sealed class SurveyDestination(val route: String = "") {
 
     object SignIn : SurveyDestination("sign-in")
 
-    object SurveyList : SurveyDestination("survey-list")
+    object Home : SurveyDestination("home")
 
-    object SurveyDetail : SurveyDestination("survey-detail")
+    object SurveyDetail : SurveyDestination("survey-detail") {
+
+        override val arguments = listOf(
+            navArgument(SurveyIdArg) { type = NavType.StringType}
+        )
+
+        fun buildDestination(surveyId: String): String {
+            return "survey/$surveyId"
+        }
+    }
 }
