@@ -9,7 +9,7 @@
 import Observation
 
 @Observable
-struct SurveyQuestionUiModel {
+class SurveyQuestionUiModel {
 
     let imageUrl: String
     let questionNumber: Int
