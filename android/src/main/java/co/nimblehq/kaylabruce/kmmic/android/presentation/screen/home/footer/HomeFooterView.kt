@@ -94,7 +94,7 @@ fun HomeFooterView(
             Spacer(modifier = Modifier.width(Dimens.medium.dp))
             NextCircleButton(
                 onClick = {
-                    onNavigate.invoke(surveys[pagerState.currentPage].id)
+                    onNavigate(surveys[pagerState.currentPage].id)
                 },
             )
         }

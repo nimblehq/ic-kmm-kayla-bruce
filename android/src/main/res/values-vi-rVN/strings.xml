@@ -2,8 +2,12 @@
 <resources>
     <string name="app_name">KMMIC Survey</string>
 
+    <string name="cancel">Huỷ</string>
     <string name="login">Đăng nhập</string>
     <string name="login_email">Email</string>
     <string name="login_forgot">Quên?</string>
     <string name="login_password">Mật khẩu</string>
+    <string name="quit_survey_title">Lưy ý!</string>
+    <string name="quit_survey_description">ạn có muốn đóng khảo sát hiện tại?</string>
+    <string name="yes">Đồng ý</string>
 </resources>

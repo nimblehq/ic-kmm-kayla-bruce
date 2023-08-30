@@ -8,6 +8,7 @@ import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.HomeScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.signin.SignInScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.splash.SplashScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.surveydetail.SurveyDetailScreen
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.surveyquestion.SurveyQuestionScreen
 
 @Composable
 fun SurveyNavHost(
@@ -22,9 +23,7 @@ fun SurveyNavHost(
         composable(SurveyDestination.Splash) {
             SplashScreen(
                 onNavigate = {
-                    navController.navigate(
-                        route = SurveyDestination.Home.route,
-                    )
+                    navController.navigate(destination = SurveyDestination.Home)
                 }
             )
         }
@@ -33,11 +32,13 @@ fun SurveyNavHost(
             SignInScreen()
         }
 
-        composable(SurveyDestination.Home) { entry ->
+        composable(SurveyDestination.Home) {
             HomeScreen(
                 onNavigateToSurveyDetail = {
-                    navController
-                        .navigate(route = SurveyDestination.SurveyDetail.buildDestination(surveyId = it))
+                    val route = SurveyDestination.SurveyDetail.buildDestination(
+                        surveyId = it,
+                    )
+                    navController.navigate(route = route)
                 },
                 )
         }
@@ -46,7 +47,29 @@ fun SurveyNavHost(
             route = "${SurveyDestination.SurveyDetail.route}/{$SurveyIdArg}",
             arguments = SurveyDestination.SurveyDetail.arguments
         ) {
-            SurveyDetailScreen()
+            SurveyDetailScreen(
+                onNavigateToQuestion = { id, number ->
+                    val route = SurveyDestination.SurveyQuestion.buildDestination(
+                        surveyId = id,
+                        questionNumber = number,
+                    )
+                    navController.navigate(route = route)
+                },
+                onBack = {
+                    navController.navigate(destination = SurveyDestination.Up)
+                },
+                )
+        }
+
+        composable(
+            route = "${SurveyDestination.SurveyQuestion.route}/{$SurveyIdArg}/{$QuestionNumberArg}",
+            arguments = SurveyDestination.SurveyQuestion.arguments,
+        ) {
+            SurveyQuestionScreen(
+                onClose = {
+                    navController.navigate(destination = SurveyDestination.Up)
+                },
+                )
         }
     }
 }
@@ -62,4 +85,20 @@ private fun NavGraphBuilder.composable(
         deepLinks = deepLinks,
         content = content
     )
+}
+
+private fun NavHostController.navigate(destination: SurveyDestination) {
+    when (destination) {
+        is SurveyDestination.Up -> popBackStack()
+        is SurveyDestination.Splash -> navigate(
+            route = destination.route,
+            navOptions {
+                popUpTo(
+                    route = SurveyDestination.Splash.route
+                ) { inclusive = false }
+                launchSingleTop = true
+            },
+        )
+        else -> navigate(route = destination.route)
+    }
 }

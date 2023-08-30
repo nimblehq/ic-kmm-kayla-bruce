@@ -1,15 +1,20 @@
 package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.surveyquestion
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -18,6 +23,7 @@ import co.nimblehq.kaylabruce.kmmic.android.constants.Colors
 import co.nimblehq.kaylabruce.kmmic.android.constants.Dimens
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.ImageBackground
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.NextCircleButton
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.dialog.Dialog
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyQuestionUiModel
 
 // TODO: - Remove dummy data
@@ -31,8 +37,15 @@ private val _dummyData = SurveyQuestionUiModel(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun SurveyQuestionScreen() {
+fun SurveyQuestionScreen(
+    onClose: () -> Unit,
+) {
     val uiModel = _dummyData
+    val shouldShowDialog = remember { mutableStateOf(false) }
+    DialogHandler(
+        shouldShowDialog = shouldShowDialog,
+        onClose = { onClose() },
+    )
     Scaffold(
         backgroundColor = Color.Black,
     ) { padding ->
@@ -59,7 +72,11 @@ fun SurveyQuestionScreen() {
                                         horizontalArrangement = Arrangement.End,
                                         modifier = Modifier.fillMaxWidth(),
                                     )  {
-                                        CloseButton()
+                                        CloseButton(
+                                            onClose = {
+                                            shouldShowDialog.value = true
+                                            },
+                                            )
                                     }
                                     Spacer(modifier = Modifier.height(Dimens.medium.dp))
                                     QuestionNumberText(text = uiModel.questionIndex)
@@ -91,7 +108,9 @@ private fun BackgroundImage(imageUrl: String) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun CloseButton() {
+private fun CloseButton(
+    onClose: () -> Unit,
+) {
     Image(
         painter = painterResource(id = R.drawable.ic_close),
         contentDescription = null,
@@ -99,7 +118,7 @@ private fun CloseButton() {
         modifier = Modifier
             .size(30.dp)
             .clickable {
-                // TODO: - Close question
+                onClose()
             },
     )
 }
@@ -162,8 +181,35 @@ private fun SubmitButton() {
     }
 }
 
+@Composable
+private fun DialogHandler(
+    shouldShowDialog: MutableState<Boolean>,
+    onClose: () -> Unit,
+) {
+    if (shouldShowDialog.value) {
+        Dialog(
+            title = stringResource(id = R.string.quit_survey_title),
+            message = stringResource(id = R.string.quit_survey_description),
+            onDismiss = {
+                shouldShowDialog.value = false
+            },
+            onYes = {
+                shouldShowDialog.value = false
+                onClose()
+            },
+            onCancel = {
+                shouldShowDialog.value = false
+            },
+            )
+    }
+    // Override the system back button
+    BackHandler(true) {
+        shouldShowDialog.value = true
+    }
+}
+
 @Preview
 @Composable
 private fun PreviewSurveyQuestionScreen() {
-    SurveyQuestionScreen()
+    SurveyQuestionScreen(onClose = {})
 }

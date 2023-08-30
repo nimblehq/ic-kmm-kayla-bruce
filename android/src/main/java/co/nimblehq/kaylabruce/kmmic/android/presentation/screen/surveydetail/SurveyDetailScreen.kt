@@ -33,7 +33,10 @@ private val _dummyData = SurveyDetailUiModel(
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun SurveyDetailScreen() {
+fun SurveyDetailScreen(
+    onNavigateToQuestion: (String, Int) -> Unit,
+    onBack: () -> Unit,
+) {
     Scaffold(
         backgroundColor = Color.Black,
     ) { padding ->
@@ -57,7 +60,7 @@ fun SurveyDetailScreen() {
                                 modifier = Modifier.fillMaxSize(),
                                 ) {
                                 Column {
-                                    BackButton()
+                                    BackButton(onBack = { onBack() })
                                     Spacer(modifier = Modifier.height(Dimens.medium.dp))
                                     TitleText(text = uiModel.titleText)
                                     Spacer(modifier = Modifier.height(Dimens.small.dp))
@@ -67,7 +70,14 @@ fun SurveyDetailScreen() {
                                     horizontalArrangement = Arrangement.End,
                                     modifier = Modifier.fillMaxWidth(),
                                 )  {
-                                    StartButton()
+                                    StartButton(
+                                        onNavigateToQuestion = {
+                                            onNavigateToQuestion(
+                                                "dummyId",
+                                                1,
+                                            )
+                                        }
+                                    )
                                 }
                             }
                         }
@@ -88,7 +98,9 @@ private fun BackgroundImage(imageUrl: String) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun BackButton() {
+private fun BackButton(
+    onBack: (String) -> Unit,
+) {
     Image(
         painter = painterResource(id = R.drawable.ic_back),
         contentDescription = null,
@@ -96,7 +108,7 @@ private fun BackButton() {
         modifier = Modifier
             .size(30.dp)
             .clickable {
-                // TODO: - Navigate back
+                onBack("")
             },
     )
 }
@@ -126,11 +138,13 @@ private fun DescriptionText(text: String) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun StartButton() {
+private fun StartButton(
+    onNavigateToQuestion: () -> Unit,
+) {
     Button(
         contentPadding = PaddingValues(Dimens.medium.dp),
         onClick = {
-        // TODO: - Navigate to question screen
+            onNavigateToQuestion()
         },
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
         ) {
@@ -147,5 +161,8 @@ private fun StartButton() {
 @Preview
 @Composable
 fun PreviewSurveyDetailScreen() {
-    SurveyDetailScreen()
+    SurveyDetailScreen(
+        onNavigateToQuestion = { id, number -> },
+        onBack = {},
+        )
 }

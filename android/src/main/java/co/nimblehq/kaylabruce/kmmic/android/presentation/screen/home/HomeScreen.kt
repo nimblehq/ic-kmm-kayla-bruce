@@ -85,7 +85,7 @@ fun HomeScreen(
                                 uiModel = uiModel.surveys,
                                 pagerState = pagerState,
                                 onNavigateToSurveyDetail = {
-                                    onNavigateToSurveyDetail.invoke(it)
+                                    onNavigateToSurveyDetail(it)
                                 }
                             )
                         }
@@ -137,7 +137,7 @@ private fun HomeFooter(
         surveys = uiModel,
         isLoading = false,
         onNavigate = {
-            onNavigateToSurveyDetail.invoke(it)
+            onNavigateToSurveyDetail(it)
         },
     )
 }
