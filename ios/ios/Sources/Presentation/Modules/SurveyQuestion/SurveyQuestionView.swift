@@ -122,12 +122,12 @@ struct SurveyQuestionView: View {
     }
 
     private var quitAlert: Alert {
-        let yesText = Text(localized.yes)
-        let cancelText = Text(localized.cancel)
+        let yesText = Text(localized.dialogYesButtonTitle)
+        let cancelText = Text(localized.dialogCancelButtonTitle)
             .bold()
         return Alert(
-            title: Text(localized.questionQuitTitle),
-            message: Text(localized.questionQuitDescription),
+            title: Text(localized.questionQuitAlertTitle),
+            message: Text(localized.questionQuitAlertDescription),
             primaryButton: .default(
                 yesText,
                 action: {
