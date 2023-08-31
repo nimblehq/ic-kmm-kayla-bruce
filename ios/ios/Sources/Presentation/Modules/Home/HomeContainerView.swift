@@ -35,7 +35,7 @@ struct HomeContainerView: View {
     }
 
     private func onTap(index: Int) {
-
+        // TODO: Integration task
     }
 }
 
