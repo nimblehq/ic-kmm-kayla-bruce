@@ -36,7 +36,7 @@ struct SplashView: View {
             isLoaded.toggle()
             let showNextScreenDelay = showLogoDelay + showLogoDuration
             DispatchQueue.main.asyncAfter(deadline: .now() + showNextScreenDelay) {
-                dataSource.checkShouldShowHomeScreen()
+                dataSource.coordinator.showLoginScreen()
             }
         }
     }

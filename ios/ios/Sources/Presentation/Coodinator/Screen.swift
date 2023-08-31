@@ -8,6 +8,7 @@
 
 enum Screen {
     case splash
+    case login
     case home
     case surveyDetail(id: String)
     case surveyQuestion(id: String, question: Int)

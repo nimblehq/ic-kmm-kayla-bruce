@@ -54,7 +54,9 @@
 		22AF67932A9A05F1001D81FA /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AF67922A9A05F1001D81FA /* BaseCoordinator.swift */; };
 		22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B4B5C92A861D0F00041D92 /* Dimens.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		965F07982A9DE9F500B80005 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F07972A9DE9F500B80005 /* SignInView.swift */; };
+		965F07982A9DE9F500B80005 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965F07972A9DE9F500B80005 /* LoginView.swift */; };
+		967338F72AA07BAC002F2D96 /* LoginView+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967338F62AA07BAC002F2D96 /* LoginView+DataSource.swift */; };
+		967338F92AA08328002F2D96 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967338F82AA08328002F2D96 /* LoginCoordinator.swift */; };
 		BBA1F9E8E9972A7A483AB606 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5AF58C075473DD0EA8E52E /* Pods_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +131,9 @@
 		5DEA60E82D61537B399BD751 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		965F07972A9DE9F500B80005 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		965F07972A9DE9F500B80005 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		967338F62AA07BAC002F2D96 /* LoginView+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+DataSource.swift"; sourceTree = "<group>"; };
+		967338F82AA08328002F2D96 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		969EC568E2530FA58BCC8A1C /* Pods-ios.releasestaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.releasestaging.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.releasestaging.xcconfig"; sourceTree = "<group>"; };
 		B28F39CF3BC61002CB794577 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A1823E9ABB5605BC5F3728 /* Pods-ios.debugproduction.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debugproduction.xcconfig"; path = "Target Support Files/Pods-ios/Pods-ios.debugproduction.xcconfig"; sourceTree = "<group>"; };
@@ -377,7 +381,7 @@
 		2291AED92A849AB000F262EA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				965F07962A9DE9E500B80005 /* SignIn */,
+				967338F52AA07A9E002F2D96 /* Login */,
 				2291AEDA2A849AB700F262EA /* Content */,
 				2291AEDE2A849AF800F262EA /* Home */,
 				2291AEDB2A849AE000F262EA /* Splash */,
@@ -474,6 +478,7 @@
 				2249EB732A9CA86200C85CA8 /* SplashCoordinator.swift */,
 				2249EB7B2A9DAD4700C85CA8 /* SurveyDetailCoordinator.swift */,
 				2249EB812A9DCC1200C85CA8 /* SurveyQuestionCoordinator.swift */,
+				967338F82AA08328002F2D96 /* LoginCoordinator.swift */,
 			);
 			path = Coodinator;
 			sourceTree = "<group>";
@@ -530,12 +535,13 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
-		965F07962A9DE9E500B80005 /* SignIn */ = {
+		967338F52AA07A9E002F2D96 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				965F07972A9DE9F500B80005 /* SignInView.swift */,
+				965F07972A9DE9F500B80005 /* LoginView.swift */,
+				967338F62AA07BAC002F2D96 /* LoginView+DataSource.swift */,
 			);
-			path = SignIn;
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -751,7 +757,7 @@
 				22B4B5CA2A861D0F00041D92 /* Dimens.swift in Sources */,
 				224AA42F2A945D6000800A61 /* SkeletonText.swift in Sources */,
 				2291AEE32A849C6200F262EA /* HomeHeaderView.swift in Sources */,
-				965F07982A9DE9F500B80005 /* SignInView.swift in Sources */,
+				965F07982A9DE9F500B80005 /* LoginView.swift in Sources */,
 				227239212A84E8A60040B3CF /* R+FontResource.swift in Sources */,
 				22A41E992A85F2D200C3265C /* Font.swift in Sources */,
 				224AA42D2A945C8300800A61 /* HomeHeaderSkeletonView.swift in Sources */,
@@ -761,6 +767,7 @@
 				224AA4332A94633D00800A61 /* SkeletonBox.swift in Sources */,
 				224AA41F2A8F544500800A61 /* SurveyItemView.swift in Sources */,
 				2249EB802A9DCBD700C85CA8 /* SurveyQuestionView+DataSource.swift in Sources */,
+				967338F72AA07BAC002F2D96 /* LoginView+DataSource.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				2291AEE02A849B1100F262EA /* HomeContainerView.swift in Sources */,
 				224AA41A2A8E2B8700800A61 /* R+Localization.swift in Sources */,
@@ -768,6 +775,7 @@
 				224AA42B2A945C7800800A61 /* SurveyListSkeletonView.swift in Sources */,
 				22AF67932A9A05F1001D81FA /* BaseCoordinator.swift in Sources */,
 				2291AEE62A849D0B00F262EA /* HomeHeaderUiModel.swift in Sources */,
+				967338F92AA08328002F2D96 /* LoginCoordinator.swift in Sources */,
 				22AF67862A975C3D001D81FA /* SurveyDetailUiModel.swift in Sources */,
 				2249EB7E2A9DAEFF00C85CA8 /* HomeContainer+DataSource.swift in Sources */,
 				22AF678F2A98BA7F001D81FA /* AppCoodinator.swift in Sources */,

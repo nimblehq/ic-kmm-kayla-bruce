@@ -19,6 +19,8 @@ struct AppCoordinator: View {
             case .splash:
                 SplashView(dataSource: .init(coordinator: coordinator))
                     .preferredColorScheme(.dark)
+            case .login:
+                LoginView(dataSource: .init(coordinator: coordinator))
             case .home:
                 HomeContainerView(dataSource: .init(coordinator: coordinator))
             case .surveyDetail(let id):

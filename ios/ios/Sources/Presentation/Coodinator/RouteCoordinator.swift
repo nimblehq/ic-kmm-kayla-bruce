@@ -31,11 +31,18 @@ extension RouteCoordinator: BaseCoordinator {
 extension RouteCoordinator: SplashCoordinator {
 
     func showLoginScreen() {
-        // TODO: - Integration task
+        routes.presentCover(.login, embedInNavigationView: true)
     }
 
     func showHomeScreen() {
         changeRootToHomeScreen()
+    }
+}
+
+extension RouteCoordinator: LoginCoordinator {
+
+    func showForgotPasswordScreen() {
+        // TODO: - Integration task with forgot password screen
     }
 }
 

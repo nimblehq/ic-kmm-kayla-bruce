@@ -8,11 +8,13 @@
 
 import SwiftUI
 
-struct SignInView: View {
+struct LoginView: View {
 
     @State private var isLoaded = false
     @State private var email = ""
     @State private var password = ""
+    
+    var dataSource: DataSource
 
     var body: some View {
         ZStack {
@@ -35,7 +37,9 @@ struct SignInView: View {
 
                 if isLoaded {
                     emailField
+                    Spacer().frame(maxHeight: 16.0)
                     passwordField
+                    Spacer().frame(maxHeight: 20.0)
                     loginButton
                 }
             }
@@ -58,6 +62,7 @@ struct SignInView: View {
         .background(Color.white.opacity(0.18))
         .cornerRadius(10.0)
         .layoutPriority(2.0)
+        
     }
 
     var passwordField: some View {
@@ -66,6 +71,10 @@ struct SignInView: View {
                 R.string.localizable.loginTextFieldPassword(),
                 text: $password
             )
+            Button(R.string.localizable.loginButtonForgot()) {
+                dataSource.coordinator.showForgotPasswordScreen()
+            }
+            .foregroundColor(.white.opacity(0.5))
         }
         .foregroundColor(Color.white)
         .tint(Color.white.opacity(0.5))
@@ -88,6 +97,6 @@ struct SignInView: View {
 struct LogInView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SignInView()
+        LoginView(dataSource: LoginView.DataSource(coordinator: RouteCoordinator()))
     }
 }
