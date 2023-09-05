@@ -1,6 +1,10 @@
 "dialog.cancelButton.title" = "Huỷ";
 "dialog.yesButton.title" = "Đồng ý";
 "home.header.today" = "Hôm nay";
+"login.textField.email" = "Email";
+"login.textField.password" = "Mật khẩu";
+"login.button.forgot" = "Quên?";
+"login.button.login" = "Đăng nhập";
 "surveyDetail.primaryButton.title" = "Bắt đầu khảo sát";
 "question.submitButton.title" = "Gửi khảo sát";
 "question.quitAlert.title" = "Lưu ý!";

@@ -1,6 +1,10 @@
 "dialog.cancelButton.title" = "Cancel";
 "dialog.yesButton.title" = "Yes";
 "home.header.today" = "Today";
+"login.textField.email" = "Email";
+"login.textField.password" = "Password";
+"login.button.forgot" = "Forgot?";
+"login.button.login" = "Login";
 "surveyDetail.primaryButton.title" = "Start Survey";
 "question.submitButton.title" = "Submit";
 "question.quitAlert.title" = "Warning!";
