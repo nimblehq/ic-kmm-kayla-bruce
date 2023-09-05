@@ -10,10 +10,14 @@ import SwiftUI
 
 struct HomeContainerView: View {
 
+    var dataSource: DataSource
+
     var body: some View {
         ZStack {
-            SurveyListView()
-                .edgesIgnoringSafeArea(.all)
+            SurveyListView(onTap: { index in
+                dataSource.showSurveyDetailScreen(id: "\(index)")
+            })
+            .edgesIgnoringSafeArea(.all)
 
             VStack {
                 let homeHeaderUiModel = HomeHeaderUiModel(
@@ -29,9 +33,13 @@ struct HomeContainerView: View {
             }
         }
     }
+
+    private func onTap(index: Int) {
+        // TODO: Integration task
+    }
 }
 
 #Preview {
-    HomeContainerView()
+    HomeContainerView(dataSource: .init(coordinator: RouteCoordinator()))
         .preferredColorScheme(.dark)
 }

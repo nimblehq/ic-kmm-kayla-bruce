@@ -14,13 +14,15 @@ struct SplashView: View {
 
     @State private var isLoaded = false
 
+    var dataSource: DataSource
+
     var body: some View {
         ZStack {
-            Image("bg-splash")
+            assets.bgSplash.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
 
-            Image("LogoWhite")
+            assets.icLogowhite.image
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: .infinity)
                 .opacity(isLoaded ? 1.0 : 0.0)
@@ -32,10 +34,14 @@ struct SplashView: View {
         )
         .onAppear {
             isLoaded.toggle()
+            let showNextScreenDelay = showLogoDelay + showLogoDuration
+            DispatchQueue.main.asyncAfter(deadline: .now() + showNextScreenDelay) {
+                dataSource.checkShouldShowHomeScreen()
+            }
         }
     }
 }
 
 #Preview {
-    SplashView()
+    SplashView(dataSource: SplashView.DataSource(coordinator: RouteCoordinator()))
 }

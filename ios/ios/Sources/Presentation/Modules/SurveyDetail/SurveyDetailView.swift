@@ -10,7 +10,9 @@ import SwiftUI
 
 struct SurveyDetailView: View {
 
-    let uiModel: SurveyDetailUiModel
+    let id: String
+    var uiModel: SurveyDetailUiModel
+    let dataSource: DataSource
 
     var body: some View {
         ZStack {
@@ -76,8 +78,7 @@ struct SurveyDetailView: View {
     private var startButton: some View {
         Button(
             action: {
-                // TODO: Navigate to the question screen
-                print("Question 1")
+                dataSource.showSurveyQuestion(id: id, question: 1)
             },
             label: {
                 Text(localized.surveyDetailPrimaryButtonTitle)
@@ -100,6 +101,10 @@ struct SurveyDetailView: View {
         title: "Working from home Check-In",
         description: "We would like to know how you feel about our work from home (WFH) experience."
     )
-    return SurveyDetailView(uiModel: uiModel)
-        .preferredColorScheme(.dark)
+    return SurveyDetailView(
+        id: .empty,
+        uiModel: uiModel,
+        dataSource: .init(coordinator: RouteCoordinator())
+    )
+    .preferredColorScheme(.dark)
 }

@@ -1,3 +1,7 @@
+"dialog.cancelButton.title" = "Cancel";
+"dialog.yesButton.title" = "Yes";
 "home.header.today" = "Today";
 "surveyDetail.primaryButton.title" = "Start Survey";
 "question.submitButton.title" = "Submit";
+"question.quitAlert.title" = "Warning!";
+"question.quitAlert.description" = "Are you sure you want to quit the survey?";
