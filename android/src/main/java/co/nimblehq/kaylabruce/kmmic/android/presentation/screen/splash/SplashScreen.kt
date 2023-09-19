@@ -28,7 +28,7 @@ fun SplashScreen(
     }
     LaunchedEffect(Unit) {
         delay(SHOW_LOGO_DELAY + SHOW_LOGO_DURATION)
-        onNavigate.invoke()
+        onNavigate()
     }
     Box(
         contentAlignment = Alignment.Center,

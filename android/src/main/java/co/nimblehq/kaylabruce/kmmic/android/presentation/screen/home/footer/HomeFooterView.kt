@@ -24,12 +24,14 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import co.nimblehq.kaylabruce.kmmic.android.constants.Colors
 import co.nimblehq.kaylabruce.kmmic.android.constants.Dimens
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.HorizontalPagerIndicator
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.NextCircleButton
+import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.HomeScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
 import com.google.accompanist.placeholder.*
 
@@ -39,6 +41,7 @@ fun HomeFooterView(
     pagerState: PagerState,
     surveys: List<SurveyUiModel>,
     isLoading: Boolean,
+    onNavigate: (String) -> Unit,
 ) {
     var survey by remember { mutableStateOf<SurveyUiModel?>(null) }
     LaunchedEffect(surveys) {
@@ -90,7 +93,9 @@ fun HomeFooterView(
             }
             Spacer(modifier = Modifier.width(Dimens.medium.dp))
             NextCircleButton(
-                onClick = {  },
+                onClick = {
+                    onNavigate(surveys[pagerState.currentPage].id)
+                },
             )
         }
     }
