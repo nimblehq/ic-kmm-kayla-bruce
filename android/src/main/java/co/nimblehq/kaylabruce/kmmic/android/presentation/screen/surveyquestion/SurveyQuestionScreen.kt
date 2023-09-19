@@ -71,12 +71,12 @@ fun SurveyQuestionScreen(
                                     Row(
                                         horizontalArrangement = Arrangement.End,
                                         modifier = Modifier.fillMaxWidth(),
-                                    )  {
+                                    ) {
                                         CloseButton(
                                             onClose = {
-                                            shouldShowDialog.value = true
+                                                shouldShowDialog.value = true
                                             },
-                                            )
+                                        )
                                     }
                                     Spacer(modifier = Modifier.height(Dimens.medium.dp))
                                     QuestionNumberText(text = uiModel.questionIndex)
@@ -86,7 +86,7 @@ fun SurveyQuestionScreen(
                                 Row(
                                     horizontalArrangement = Arrangement.End,
                                     modifier = Modifier.fillMaxWidth(),
-                                )  {
+                                ) {
                                     PrimaryButton(isLastQuestion = uiModel.isLastQuestion)
                                 }
                             }
@@ -151,14 +151,15 @@ private fun QuestionTittleText(text: String) {
 private fun PrimaryButton(isLastQuestion: Boolean) {
     if (isLastQuestion) SubmitButton() else NextButton()
 }
+
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun NextButton() {
     NextCircleButton(
         onClick = {
-                  // Todo: - Navigate to the next question
+            // Todo: - Navigate to the next question
         },
-        )
+    )
 }
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -200,7 +201,7 @@ private fun DialogHandler(
             onCancel = {
                 shouldShowDialog.value = false
             },
-            )
+        )
     }
     // Override the system back button
     BackHandler(true) {

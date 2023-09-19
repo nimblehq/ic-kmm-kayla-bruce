@@ -58,7 +58,7 @@ fun SurveyDetailScreen(
                             Column(
                                 verticalArrangement = Arrangement.SpaceBetween,
                                 modifier = Modifier.fillMaxSize(),
-                                ) {
+                            ) {
                                 Column {
                                     BackButton(onBack = { onBack() })
                                     Spacer(modifier = Modifier.height(Dimens.medium.dp))
@@ -69,15 +69,13 @@ fun SurveyDetailScreen(
                                 Row(
                                     horizontalArrangement = Arrangement.End,
                                     modifier = Modifier.fillMaxWidth(),
-                                )  {
-                                    StartButton(
-                                        onNavigateToQuestion = {
-                                            onNavigateToQuestion(
-                                                "dummyId",
-                                                1,
-                                            )
-                                        }
-                                    )
+                                ) {
+                                    StartButton(onNavigateToQuestion = {
+                                        onNavigateToQuestion(
+                                            "dummyId",
+                                            1,
+                                        )
+                                    })
                                 }
                             }
                         }
@@ -99,7 +97,7 @@ private fun BackgroundImage(imageUrl: String) {
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun BackButton(
-    onBack: (String) -> Unit,
+    onBack: () -> Unit,
 ) {
     Image(
         painter = painterResource(id = R.drawable.ic_back),
@@ -108,7 +106,7 @@ private fun BackButton(
         modifier = Modifier
             .size(30.dp)
             .clickable {
-                onBack("")
+                onBack()
             },
     )
 }
@@ -147,7 +145,7 @@ private fun StartButton(
             onNavigateToQuestion()
         },
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
-        ) {
+    ) {
         Text(
             text = "Start Survey",
             color = Color.Black,
@@ -164,5 +162,5 @@ fun PreviewSurveyDetailScreen() {
     SurveyDetailScreen(
         onNavigateToQuestion = { id, number -> },
         onBack = {},
-        )
+    )
 }

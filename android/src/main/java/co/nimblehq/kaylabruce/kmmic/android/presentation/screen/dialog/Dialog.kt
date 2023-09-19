@@ -25,7 +25,7 @@ fun Dialog(
                 ),
             ) {
                 Text(
-                    text = stringResource(id = R.string.yes),
+                    text = stringResource(id = R.string.dialog_yes_button),
                     color = Colors.White70,
                     )
             }
@@ -38,7 +38,7 @@ fun Dialog(
                 ),
             ) {
                 Text(
-                    text = stringResource(id = R.string.cancel),
+                    text = stringResource(id = R.string.dialog_cancel_button),
                     color = Colors.White50,
                     )
             }

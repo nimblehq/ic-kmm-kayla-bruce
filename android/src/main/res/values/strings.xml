@@ -2,12 +2,12 @@
 <resources>
     <string name="app_name">KMMIC Survey</string>
 
-    <string name="cancel">Cancel</string>
+    <string name="dialog_cancel_button">Cancel</string>
+    <string name="dialog_yes_button">Yes</string>
     <string name="login">Login</string>
     <string name="login_email">Email</string>
     <string name="login_forgot">Forgot?</string>
     <string name="login_password">Password</string>
     <string name="quit_survey_title">Warning!</string>
     <string name="quit_survey_description">Are you sure you want to quit the survey?</string>
-    <string name="yes">Yes</string>
 </resources>

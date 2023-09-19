@@ -40,7 +40,7 @@ fun SurveyNavHost(
                     )
                     navController.navigate(route = route)
                 },
-                )
+            )
         }
 
         composable(
@@ -58,7 +58,7 @@ fun SurveyNavHost(
                 onBack = {
                     navController.navigate(destination = SurveyDestination.Up)
                 },
-                )
+            )
         }
 
         composable(
@@ -69,7 +69,7 @@ fun SurveyNavHost(
                 onClose = {
                     navController.navigate(destination = SurveyDestination.Up)
                 },
-                )
+            )
         }
     }
 }
@@ -99,6 +99,7 @@ private fun NavHostController.navigate(destination: SurveyDestination) {
                 launchSingleTop = true
             },
         )
+
         else -> navigate(route = destination.route)
     }
 }
