@@ -23,6 +23,7 @@ fun SurveyNavHost(
         composable(SurveyDestination.Splash) {
             SplashScreen(
                 onNavigate = {
+                    // TODO: Navigate Between Splash, Sign in and Home screen
                     navController.navigate(destination = SurveyDestination.Home)
                 }
             )
