@@ -1,22 +1,21 @@
 package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.base.BaseViewModel
+import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
+import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.toUiModel
 import co.nimblehq.kaylabruce.kmmic.domain.usecase.GetSurveyListUseCase
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onCompletion
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.onStart
-import timber.log.Timber
+import kotlinx.coroutines.flow.*
 
 private const val START_INDEX = 1
 private const val PAGE_SIZE = 10
 
 class HomeViewModel(
     private val getSurveyListUseCase: GetSurveyListUseCase,
-): BaseViewModel() {
+) : BaseViewModel() {
+    private val _surveyList = MutableStateFlow(emptyList<SurveyUiModel>())
+    val surveyList: StateFlow<List<SurveyUiModel>> = _surveyList
+
     fun init() {
         getSurveyList()
     }
@@ -26,18 +25,10 @@ class HomeViewModel(
             pageNumber = START_INDEX,
             pageSize = PAGE_SIZE,
         )
-            .onStart {
-                showLoading()
-            }
-            .onCompletion {
-                hideLoading()
-            }
-            .catch { error ->
-                _error.emit(error)
-            }
+            .injectLoading()
+            .catch { _error.emit(it) }
             .onEach { surveys ->
-                // TODO: Emit surveys
-                println(surveys)
+                _surveyList.emit(surveys.map { it.toUiModel() })
             }
             .launchIn(viewModelScope)
     }

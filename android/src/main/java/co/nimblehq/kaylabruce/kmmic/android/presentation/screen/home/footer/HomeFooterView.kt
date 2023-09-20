@@ -2,36 +2,18 @@ package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.footer
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.runtime.snapshotFlow
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.*
+import androidx.compose.ui.*
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
-import co.nimblehq.kaylabruce.kmmic.android.constants.Colors
-import co.nimblehq.kaylabruce.kmmic.android.constants.Dimens
+import androidx.compose.ui.unit.*
+import co.nimblehq.kaylabruce.kmmic.android.constants.*
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.HorizontalPagerIndicator
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.NextCircleButton
-import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.HomeScreen
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
 import com.google.accompanist.placeholder.*
 
@@ -64,7 +46,7 @@ fun HomeFooterView(
         Crossfade(
             targetState = survey?.title.orEmpty(),
             label = "",
-            ) {
+        ) {
             Text(
                 text = it,
                 color = Colors.White,

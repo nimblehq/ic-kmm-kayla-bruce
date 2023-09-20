@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KMMIC Survey</string>
-
+    <string name="error_message">There is an unexpected error!</string>
     <string name="dialog_cancel_button">Cancel</string>
     <string name="dialog_yes_button">Yes</string>
     <string name="login">Login</string>
