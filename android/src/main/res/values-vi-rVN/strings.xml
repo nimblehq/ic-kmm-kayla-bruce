@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KMMIC Survey</string>
-
+    <string name="error_message">Đã xảy ra lỗi!</string>
     <string name="dialog_cancel_button">Huỷ</string>
     <string name="dialog_yes_button">Đồng ý</string>
     <string name="login">Đăng nhập</string>
     <string name="login_email">Email</string>
     <string name="login_forgot">Quên?</string>
     <string name="login_password">Mật khẩu</string>
+    <string name="survey_detail_start">Bắt đầu khảo sát</string>
     <string name="quit_survey_title">Lưy ý!</string>
     <string name="quit_survey_description">Bạn có muốn đóng khảo sát hiện tại?</string>
 </resources>

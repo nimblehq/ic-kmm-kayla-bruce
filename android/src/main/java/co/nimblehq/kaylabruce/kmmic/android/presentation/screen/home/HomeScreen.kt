@@ -3,49 +3,22 @@ package co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.pager.HorizontalPager
-import androidx.compose.foundation.pager.PagerState
-import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material.Scaffold
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.pager.*
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import co.nimblehq.kaylabruce.kmmic.android.constants.Dimens
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.common.ImageBackground
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.footer.HomeFooterView
 import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.header.HomeHeaderView
-import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.HomeHeaderUiModel
-import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyListUiModel
-import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
-
-// TODO: Remove dummy data
-private val _dummyData = SurveyListUiModel(
-    surveys = listOf(
-        SurveyUiModel(
-            id = "1",
-            url = "https://picsum.photos/375/812",
-            title = "Working from home Check-In",
-            description = "We would like to know how you feel about our work from home",
-        ),
-        SurveyUiModel(
-            id = "2",
-            url = "https://picsum.photos/375/813",
-            title = "Career training and development",
-            description = "We would like to know what are your goals and skills you wanted",
-        ),
-        SurveyUiModel(
-            id = "3",
-            url = "https://picsum.photos/375/814",
-            title = "Inclusion and belonging",
-            description = "Building a workplace culture that prioritizes belonging and inclusion",
-        ),
-    )
-)
+import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.*
+import co.nimblehq.kaylabruce.kmmic.android.util.genericError
+import kotlinx.coroutines.launch
+import org.koin.androidx.compose.getViewModel
 
 private val _headerData = HomeHeaderUiModel(
     imageUrl = "https://avatars.githubusercontent.com/u/7391673?s=200&v=4",
@@ -56,13 +29,32 @@ private val _headerData = HomeHeaderUiModel(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
+    viewModel: HomeViewModel = getViewModel(),
     onNavigateToSurveyDetail: (String) -> Unit,
 ) {
+    val surveys by viewModel.surveyList.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val error by viewModel.error.collectAsState()
+    val scope = rememberCoroutineScope()
+    val scaffoldState = rememberScaffoldState()
+    val context = LocalContext.current
+
+    error?.let {
+        scope.launch {
+            scaffoldState.snackbarHostState.showSnackbar(message = it.genericError(context))
+        }
+        viewModel.clearError()
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.init()
+    }
+
     Scaffold(
         backgroundColor = Color.Black,
     ) { padding ->
         val pagerState = rememberPagerState()
-        val uiModel = _dummyData
+        val uiModel = SurveyListUiModel(surveys = surveys)
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -80,14 +72,20 @@ fun HomeScreen(
                                 .statusBarsPadding()
                                 .padding(Dimens.medium.dp),
                         ) {
-                            HomeHeader(uiModel = _headerData)
-                            HomeFooter(
-                                uiModel = uiModel.surveys,
+                            HomeHeaderView(
+                                uiModel = _headerData,
+                                isLoading = isLoading,
+                            ) {
+                                // TODO: Tap profile image
+                                println("Tap profile image")
+                            }
+                            HomeFooterView(
                                 pagerState = pagerState,
-                                onNavigateToSurveyDetail = {
-                                    onNavigateToSurveyDetail(it)
-                                }
-                            )
+                                surveys = uiModel.surveys,
+                                isLoading = isLoading,
+                            ) {
+                                onNavigateToSurveyDetail(it)
+                            }
                         }
                     }
                 }
@@ -111,35 +109,6 @@ private fun BackgroundImage(
             imageUrl = uiModel.surveys[index].url,
         )
     }
-}
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-private fun HomeHeader(uiModel: HomeHeaderUiModel) {
-    HomeHeaderView(
-        uiModel = uiModel,
-        isLoading = false,
-        ) {
-        // TODO: Tap profile image
-        println("Tap profile image")
-    }
-}
-
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-private fun HomeFooter(
-    pagerState: PagerState,
-    uiModel: List<SurveyUiModel>,
-    onNavigateToSurveyDetail: (String) -> Unit,
-) {
-    HomeFooterView(
-        pagerState = pagerState,
-        surveys = uiModel,
-        isLoading = false,
-        onNavigate = {
-            onNavigateToSurveyDetail(it)
-        },
-    )
 }
 
 @Preview
