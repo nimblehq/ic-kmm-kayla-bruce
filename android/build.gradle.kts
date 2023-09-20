@@ -39,7 +39,7 @@ android {
     buildTypes {
         getByName(Configuration.BuildTypes.RELEASE) {
             isMinifyEnabled = true
-            isDebuggable = false
+            isDebuggable = true
             isShrinkResources = true
             signingConfig = signingConfigs[Configuration.BuildTypes.RELEASE]
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
