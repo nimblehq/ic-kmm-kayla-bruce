@@ -1,6 +1,7 @@
 package co.nimblehq.kaylabruce.kmmic.android
 
 import android.app.Application
+import co.nimblehq.kaylabruce.kmmic.android.di.homeModule
 import co.nimblehq.kaylabruce.kmmic.di.initKoin
 import org.koin.android.BuildConfig
 import org.koin.android.ext.koin.androidContext
@@ -16,6 +17,7 @@ class SurveyApplication : Application() {
 
         initKoin {
             androidContext(applicationContext)
+            modules(homeModule)
         }
     }
 }

@@ -8,6 +8,7 @@
     <string name="login_email">Email</string>
     <string name="login_forgot">Forgot?</string>
     <string name="login_password">Password</string>
+    <string name="survey_detail_start">Start Survey</string>
     <string name="quit_survey_title">Warning!</string>
     <string name="quit_survey_description">Are you sure you want to quit the survey?</string>
 </resources>

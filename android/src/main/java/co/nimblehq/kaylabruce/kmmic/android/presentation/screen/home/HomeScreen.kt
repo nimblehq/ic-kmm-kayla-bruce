@@ -8,10 +8,8 @@ import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -22,6 +20,7 @@ import co.nimblehq.kaylabruce.kmmic.android.presentation.screen.home.header.Home
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.HomeHeaderUiModel
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyListUiModel
 import co.nimblehq.kaylabruce.kmmic.android.presentation.uimodel.SurveyUiModel
+import org.koin.androidx.compose.getViewModel
 
 // TODO: Remove dummy data
 private val _dummyData = SurveyListUiModel(
@@ -56,8 +55,13 @@ private val _headerData = HomeHeaderUiModel(
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeScreen(
+    viewModel: HomeViewModel = getViewModel(),
     onNavigateToSurveyDetail: (String) -> Unit,
 ) {
+    LaunchedEffect(Unit) {
+        viewModel.init()
+    }
+
     Scaffold(
         backgroundColor = Color.Black,
     ) { padding ->
@@ -119,7 +123,7 @@ private fun HomeHeader(uiModel: HomeHeaderUiModel) {
     HomeHeaderView(
         uiModel = uiModel,
         isLoading = false,
-        ) {
+    ) {
         // TODO: Tap profile image
         println("Tap profile image")
     }

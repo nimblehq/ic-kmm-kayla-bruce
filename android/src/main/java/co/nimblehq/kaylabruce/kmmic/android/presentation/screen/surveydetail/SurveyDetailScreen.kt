@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -147,7 +148,7 @@ private fun StartButton(
         colors = ButtonDefaults.buttonColors(backgroundColor = Color.White),
     ) {
         Text(
-            text = "Start Survey",
+            text = stringResource(id = R.string.survey_detail_start),
             color = Color.Black,
             style = MaterialTheme.typography.body1,
             maxLines = 2,

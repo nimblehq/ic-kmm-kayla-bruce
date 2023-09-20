@@ -8,6 +8,7 @@
     <string name="login_email">Email</string>
     <string name="login_forgot">Quên?</string>
     <string name="login_password">Mật khẩu</string>
+    <string name="survey_detail_start">Bắt đầu khảo sát</string>
     <string name="quit_survey_title">Lưy ý!</string>
     <string name="quit_survey_description">Bạn có muốn đóng khảo sát hiện tại?</string>
 </resources>
